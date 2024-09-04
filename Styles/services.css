@@ -59,7 +59,7 @@ body {
 
 .card-image {
     grid-area: image;
-    background-image: url("/Images/img3.jpg");
+    background-image: url("Images/img3.jpg");
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-size: cover;

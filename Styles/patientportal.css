@@ -8,7 +8,7 @@
 }
 
 .hero-img {
-    background: url('/Images/senior-man-sitting-wheelchair-doctor.jpg') no-repeat;
+    background: url('Images/senior-man-sitting-wheelchair-doctor.jpg') no-repeat;
     background-size: cover;
     background-position: top center;
     height: 100vb;

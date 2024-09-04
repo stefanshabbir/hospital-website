@@ -38,7 +38,7 @@ body {
 }
 
 .hero {
-    background: url('/Images/young-female-doctor-posing-corridor-hospital.jpg') no-repeat;
+    background: url('Images/young-female-doctor-posing-corridor-hospital.jpg') no-repeat;
     background-size: cover;
     background-position: top center;
     overflow: hidden;
