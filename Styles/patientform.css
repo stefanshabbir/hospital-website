@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green: #2add60;
+    --blue: #3eb7ed;
+    --light-blue: #5EF5F8;
+    --dark-blue: #14264C;
+}
+
+body {
+    background: linear-gradient(195deg, var(--blue), var(--dark-blue));
+    background-size: 400% 400%;
+    animation: bg-pan-right 8s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes bg-pan-right {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+max-width: 600px;
+margin: 2rem auto;
+filter: drop-shadow(0 .5rem 0.6rem #1d1d1da8);
+/* box-shadow: 0 1rem 1.2rem #ABB2B9; */
+}
+
+.tab-container input[type="radio"] {
+display: none;
+}
+
+.tab-container .tab-button {
+width: 50%;
+padding: 10px;
+background: #e2e2e2;
+font-weight: bold;
+cursor: pointer;
+border-radius: 50px 15px 0 0;
+text-align: center;
+}
+
+.tab-container .tab {
+width: 100%;
+padding: 20px;
+background: #fff;
+order: 1;
+display: none;
+border-radius: 0 0 15px 50px;
+}
+.tab-container .tab h2 {
+font-size: 3em;
+}
+
+.tab-container input[type='radio']:checked + label + .tab {
+display: block;
+}
+
+.tab-container input[type="radio"]:checked + label {
+background: #fff;
+}
+
+h2 {
+font-size: 26px;
+font-weight: 600;
+text-align: left;
+color: #2f4f4f;
+padding-bottom: 8px;
+}
+
+.content {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+padding: 1rem 0;
+}
+
+
+.input {
+display: flex;
+flex-wrap: wrap;
+width: 50%;
+padding-bottom: 1rem;
+}
+
+.input:nth-child(2n) {
+justify-content: end;
+}
+
+.input label, .gender {
+width: 95%;
+color: #2f4f4f;
+font-weight: bold;
+margin: 5px 0;
+}
+
+.gender-option {
+font-size: 1rem;
+}
+
+.input input {
+height: 40px;
+width: 95%;
+padding: 0 10px;
+border-radius: 1px solid #ccc;
+outline: none;
+}
+
+.input input:is(:focus, :valid) {
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.gender-option {
+color: gray;
+}
+
+.gender-option label {
+padding: 0 20px 0 5px;
+font-size: 1rem;
+}
+
+.gender-option label, .gender-option input {
+cursor: pointer;
+}
+
+.button-container {
+margin: 1rem 0;
+}
+
+.button-container button {
+width: 100%;
+margin-top: 10px;
+padding: 10px;
+display: block;
+font-size: 1rem;
+color: #fff;
+border: none;
+border-radius: 5px;
+background-image: linear-gradient(to right, var(--blue), var(--dark-blue));
+}
+
+.button-container button:hover {
+background-image: linear-gradient(to right, var(--light-blue), var(--blue));
+transition: 1s ease;                
+cursor: pointer;
+}
+
+@media (max-width:600px) {
+    .content {
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .input {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+    
+.tab-container {
+    margin: 2rem;
+}
+
+    .input:nth-child(2n) {
+        justify-content: space-between;
+    }
+
+    .gender-option {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+    }
+
+}

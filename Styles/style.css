@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; 
+}
+
+:root {
+    --green: #2add60;
+    --blue: #3eb7ed;
+    --light-blue: #5EF5F8;
+    --dark-blue: #14264C;
+}
+
+body {
+    min-height: 100vh;
+    /* background: url('/Images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center; */
+    /* padding-top: 1000px; */
+}
+
+::-webkit-scrollbar {
+    background: black;
+    width: 8px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px #6D9FCB;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #6D9FCB;
+    border-radius: 4px;
+}
+
+.hero {
+    background: url('/Images/young-female-doctor-posing-corridor-hospital.jpg') no-repeat;
+    background-size: cover;
+    background-position: top center;
+    overflow: hidden;
+    /* margin-top: 10vh; */
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 37.5rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 0.8rem 2rem;
+    background-color: var(--green);
+    color: white;
+    text-decoration: none;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: var(--light-blue);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and transparency */
+    z-index: -1; /* Make sure the overlay stays behind the text */
+}
+
+.health-network {
+    padding: 2rem;
+    background-color: #f4f7f9;
+}
+
+.health-network__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.health-network__left {
+    background-color: #2aa5c9;
+    padding: 2rem;
+    border-radius: 8px;
+    color: white;
+    width: 30%;
+}
+
+.health-network__left h2 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.health-network__left p {
+    font-size: 16px;
+    margin-bottom: 2rem;
+}
+
+/* Department Grid styling */
+.health-network__right {
+    width: 65%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid-item {
+    background-color: #6d9fcb;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.grid-item a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.grid-item:hover {
+    background-color: #557ba1;
+}
+
+/* Hover text control */
+.health-network__left .hover-text {
+    display: none;
+}
+
+.health-network__left .default-text {
+    display: block;
+}
+
+/* When hovering over grid items */
+.grid-item:hover ~ .health-network__left .default-text {
+    display: none;
+}
+
+.grid-item:hover ~ .health-network__left .hover-text {
+    display: none;
+}
+
+.grid-item:hover[data-hover="general-medicine"] ~ .health-network__left .hover-text[data-department="general-medicine"],
+.grid-item:hover[data-hover="surgery"] ~ .health-network__left .hover-text[data-department="surgery"],
+.grid-item:hover[data-hover="pediatrics"] ~ .health-network__left .hover-text[data-department="pediatrics"],
+.grid-item:hover[data-hover="maternity-care"] ~ .health-network__left .hover-text[data-department="maternity-care"],
+.grid-item:hover[data-hover="emergency-care"] ~ .health-network__left .hover-text[data-department="emergency-care"],
+.grid-item:hover[data-hover="rehabilitation"] ~ .health-network__left .hover-text[data-department="rehabilitation"] {
+    display: block;
+}

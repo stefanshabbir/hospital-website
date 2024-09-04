@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.logo {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar a {
+    font-size: 1.15rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    /* margin-right: 1.25rem; */
+}
+
+.navbar a:hover {
+    color: rgb(154, 160, 165);
+    transition: all 0.4s ease 0s;;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    display: none;   
+}
+
+.cta {
+    display: inline-block;
+    padding: .6rem .8rem;
+    background-color: #14264C;
+    border-radius: 2rem;
+}
+
+/* BREAKPOINT */
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+    
+    #check:checked~.navbar {
+        height: 22rem;
+    }
+
+    .navbar ul {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: 0.3s ease;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        transition: 0.3s ease;
+    }
+
+    .cta {
+        padding: .6rem .8rem;
+        background-color: #14264C;
+        border-radius: 2rem;
+        margin: 1rem 5rem;
+    }
+
+    #check:checked~.navbar ul {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; 
+}
+
+body {
+    background: rgb(0,102,255);
+    background: radial-gradient(circle, rgba(0,102,255,1) 0%, rgba(0,188,212,1) 100%);
+    color: #fff;
+}
+
+section {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+section p {
+    margin: 1rem 5%;
+
+}
+
+.branch-wrapper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 1rem 5%;
+}
+
+.branch-wrapper .branch-item {
+    border-radius: 0.5rem;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.452);
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#item1 {
+    grid-row: span 2; /* Make item1 span both rows */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#item1 .image-slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+    border-radius: 0.5rem;
+}
+
+#item1 .image-slider img {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+#item1 .slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#item1 .slider-nav a {
+    padding: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 75%;
+    transition: opacity ease 250ms;
+}
+
+#item2{
+    background-color: burlywood;
+}
+
+.branch-item .info-box div {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.branch-item h3 {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 170%;
+}
+
+.branch-item .info-box div span {
+    min-width: 40px;
+    height: 40px;
+    color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.branch-item .info-box div p{
+    color: #fff;
+}
+
+.branch-item .info-box div a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.branch-item .info-box div a:hover {
+    color: #00bcd4;
+    text-decoration: underline;
+} 
+
+#item3 {
+    padding: 0;
+}
+
+.branch-item iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+} 
+
+/* Breakpoints */
+
+@media (max-width: 1152px) {
+    .branch-wrapper {
+        display: flex;
+        flex-direction: column;
+        /* height: 100vh; */
+    }
+
+    .branch-item h3 {
+    text-align: center;
+    }
+    
+    .branch-item iframe {
+        min-height: 300px;
+    }
+
+}

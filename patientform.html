@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/patientform.css">
+    <link rel="stylesheet" href="Styles/navbar.css">
+    <title>Patient Portal</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">McStuffins</a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="#">Consultations</a></li>
+                <li><a href="#">Pharmacy</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="cta" href="patientportal.html">Log In/ Register</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main>
+        <div class="head-wrap">
+            <h1>Welcome to McStuffins Hospital Patient Portal - Your Health, Our Priority.</h1>
+        </div>
+        <div class="tab-container">
+            <input type="radio" id="register" name="tab-container" checked="checked">
+            <label for="register" class="tab-button">Register</label>
+            <div class="tab">
+                <form>
+                    <h2>Registration</h2>
+                    <div class="content">
+                        <div class="input">
+                            <label for="name">Full Name</label>
+                            <input type="text" name="name" placeholder="Enter Full Name" required>
+                        </div>
+                        <div class="input">
+                            <label for="username">Username</label>
+                            <input type="text" name="uname" placeholder="Enter Username" required>
+                        </div>
+                        <div class="input">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="Enter E-Mail" required>
+                        </div>
+                        <div class="input">
+                            <label for="phonenumber">Phone Number</label>
+                            <input type="tel" name="phoneNumber" placeholder="Enter Phone Number" required>
+                        </div>
+                        <div class="input">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" placeholder="Enter Password" required>
+                        </div>
+                        <span class="gender">Gender</span>
+                        <div class="gender-option">
+                            <input type="radio" name="gender" id="male">
+                            <label for="gender">Male</label>
+                            <input type="radio" name="gender" id="female">
+                            <label for="gender">Female</label>
+                            <input type="radio" name="gender" id="other">
+                            <label for="gender">Other</label>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+        
+            <input type="radio" id="login" name="tab-container">
+            <label for="login" class="tab-button">Log In</label>
+            <div class="tab">
+                <form>
+                    <h2>Log In</h2>
+                    <div class="content">
+                        <div class="input">
+                            <label for="username">Username</label>
+                            <input type="text" name="uname" placeholder="Enter Username" required>
+                        </div>
+                        <div class="input">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" placeholder="Enter Password" required>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+    </main>
+
+</body>
+</html>

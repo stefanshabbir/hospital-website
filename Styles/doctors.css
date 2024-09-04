@@ -1,0 +1,61 @@
+#doctors-page {
+    padding: 40px;
+    text-align: center;
+}
+
+.department-section {
+    margin-top: 50px;
+}
+
+.department-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.doctor-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+.doctor-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.doctor-card h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #007BFF;
+}
+
+.doctor-card p {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
