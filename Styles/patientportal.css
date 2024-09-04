@@ -86,7 +86,7 @@
 
 @media screen and (max-width:768px) {
     .hero-img {
-        background: url('/Images/senior-man-sitting-wheelchair-doctor1.jpg') no-repeat;
+        background: url('../Images/senior-man-sitting-wheelchair-doctor1.jpg') no-repeat;
         background-size: cover;
     }
 
