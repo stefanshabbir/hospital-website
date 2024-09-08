@@ -20,6 +20,7 @@
 
     --color-text: #222022;
     --border-radius-primary: 32px; 
+    --box-shadow: 24px 24px 80px rgba(0,0,0,0.1);
 }
 
 body {
@@ -37,12 +38,16 @@ body {
   
   /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px #6D9FCB;
+    box-shadow: inset 0 0 2px var(--blue);
 }
   
 ::-webkit-scrollbar-thumb {
     background: #6D9FCB;
     border-radius: 4px;
+}
+
+.overlay {
+    border-image: fill 1 radial-gradient(rgba(92, 91, 91, 0.753) 0%, rgba(67, 68, 68, 0.466) 90%);
 }
 
 .hero {
@@ -51,7 +56,7 @@ body {
     background-position: top center;
     overflow: hidden;
     /* margin-top: 10vh; */
-    height: 25rem;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,12 +65,13 @@ body {
 }
 
 .hero-content {
-    max-width: 37.5rem;
+    animation: fade ease 5s;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 5rem);
     margin-bottom: 1rem;
+    text-shadow: var(--box-shadow);
 }
 
 .hero p {
@@ -97,102 +103,110 @@ body {
     z-index: -1; /* Make sure the overlay stays behind the text */
 }
 
+/* Health Network Grid */
+
 .health-network {
-    padding: 2rem;
-    background-color: #f4f7f9;
-}
+    margin: 2rem;
+	display: grid;
+	grid-template-rows: .25fr repeat(2, 1fr);
+	grid-template-columns: minmax(200px, 2fr) repeat(auto-fit, minmax(150px, 1fr));
+	gap: 1rem; 
 
-.health-network__container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
-}
-
-.health-network__left {
-    background-color: #2aa5c9;
-    padding: 2rem;
-    border-radius: 8px;
-    color: white;
-    width: 30%;
-}
-
-.health-network__left h2 {
-    font-size: 24px;
-    margin-bottom: 1rem;
-}
-
-.health-network__left p {
-    font-size: 16px;
-    margin-bottom: 2rem;
-}
-
-/* Department Grid styling */
-.health-network__right {
-    width: 65%;
-}
-
-.health-network__right h2 {
-    width: 65%;
-    text-orientation: upright;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 .grid-item {
-    background-color: #6d9fcb;
+    background-color: var(--dark-blue);
     border-radius: 8px;
-    padding: 1rem;
     text-align: center;
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
+    box-shadow: var(--box-shadow);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    flex-wrap: wrap;
+    transition: 0.3s;
 }
 
 .grid-item a {
     color: white;
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     width: 100%;
+    height: 100%;
+}
+
+.text-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    
+    width: 100%;
+    height: 40vh;
+    transition: all .5s ease;
 }
 
 .grid-item:hover {
     background-color: #557ba1;
 }
 
-/* Hover text control */
-.health-network__left .hover-text {
+.hover-text {
     display: none;
 }
 
-.health-network__left .default-text {
+.default-text {
     display: block;
 }
 
-/* When hovering over grid items */
-.grid-item:hover ~ .health-network__left .default-text {
+.grid-item:hover ~ .text-preview .default-text {
     display: none;
 }
 
-.grid-item:hover ~ .health-network__left .hover-text {
-    display: none;
-}
-
-.grid-item:hover[data-hover="general-medicine"] ~ .health-network__left .hover-text[data-department="general-medicine"],
-.grid-item:hover[data-hover="surgery"] ~ .health-network__left .hover-text[data-department="surgery"],
-.grid-item:hover[data-hover="pediatrics"] ~ .health-network__left .hover-text[data-department="pediatrics"],
-.grid-item:hover[data-hover="maternity-care"] ~ .health-network__left .hover-text[data-department="maternity-care"],
-.grid-item:hover[data-hover="emergency-care"] ~ .health-network__left .hover-text[data-department="emergency-care"],
-.grid-item:hover[data-hover="rehabilitation"] ~ .health-network__left .hover-text[data-department="rehabilitation"] {
+.grid-item:hover[data-hover="general-medicine"] ~ .text-preview .hover-text[data-department="general-medicine"],
+.grid-item:hover[data-hover="surgery"] ~ .text-preview .hover-text[data-department="surgery"], 
+.grid-item:hover[data-hover="pediatrics"] ~ .text-preview .hover-text[data-department="pediatrics"], 
+.grid-item:hover[data-hover="maternity-care"] ~ .text-preview .hover-text[data-department="maternity-care"], 
+.grid-item:hover[data-hover="emergency-care"] ~ .text-preview .hover-text[data-department="emergency-care"], 
+.grid-item:hover[data-hover="rehabilitation"] ~ .text-preview .hover-text[data-department="rehabilitation"] {
     display: block;
+}
+
+#div1 {
+	grid-area: 1 / 1 / 4 / 2;
+    background-color: #2aa5c9;
+    padding: 1rem;
+    border-radius: .5rem;
+    color: white;
+}
+#div2 {
+    grid-area: 1 / 2 / 2 / 5;
+    text-align: center;
+}
+#div3 {
+	grid-area: 2/2/3/3;
+}
+#div4 {
+	grid-area: 2/3/3/4;
+}
+#div5 {
+	grid-area: 2/4/3/5;
+}
+#div6 {
+	grid-area: 3/2/4/3;
+}
+#div7 {
+	grid-area: 3/3/4/4;
+}
+#div8 {
+	grid-area: 3/4/4/5;
 }
 
 /* Blog CSS */
@@ -205,46 +219,53 @@ body {
 }
 
 .card {
-width: 90%;
-border-radius: var(--border-radius-primary);
-box-shadow: 24px 24px 80px rgba(0,0,0,0.1);
-padding: 20px 20px 28px 20px;
-margin: .4rem 3rem;
-display: flex;
-gap: 2rem;
-background-color: #fff;
+    width: 90%;
+    border-radius: var(--border-radius-primary);
+    box-shadow: 24px 24px 80px rgba(0,0,0,0.1);
+    padding: 20px 20px 28px 20px;
+    margin: .4rem 3rem;
+    display: flex;
+    gap: 2rem;
+    background-color: #fff;
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
+}
+
+
+.card p {
+    font-size: 1rem;
 }
 
 .card__image {
-width: 100%;
-max-height: 300px;
-border-radius: var(--border-radius-primary);
-object-fit: cover;
-margin-bottom: 1rem;
+    width: 100%;
+    max-height: 300px;
+    border-radius: var(--border-radius-primary);
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
 
 .card__date {
-display: block;
-font-size: var(--font-size-caption);
-line-height: var(--line-height-caption);
-text-transform: uppercase;
-color: var(--color-text);
-margin-bottom: 6px;
-
+    display: block;
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-caption);
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: 6px;
 }
 
 .card__title {
-font-size: var(--font-size-title);
-line-height: var(--line-height-title);
-color: var(--color-text);
-background-image: linear-gradient(90deg, var(--light-blue), var(--blue));
-background-size: 0;
-background-repeat: no-repeat;
-background-position: 0 85%;
-padding: 0 4px;
-margin-left: -4px;
-transition: 0.3s ;
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    color: var(--color-text);
+    background-image: linear-gradient(90deg, var(--light-blue), var(--blue));
+    background-size: 0;
+    background-repeat: no-repeat;
+    background-position: 0 85%;
+    padding: 0 4px;
+    margin-left: -4px;
+    transition: 0.3s ;
 }
 
 .card:hover .card__title {
@@ -265,10 +286,59 @@ transition: 0.3s ;
     100% {
         background-size: 100% 42%;
     }
-    
-
 }
 
-.card p {
-    font-size: 1rem;
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translate();
+    }
+    100% {
+        opacity: 1;
+        transform: translate();
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .health-network {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust grid on smaller screens */
+    }
+
+    .grid-item {
+        font-size: 0.9rem; /* Reduce font size on smaller screens */
+        padding: 0.3rem; /* Less padding */
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .health-network {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; /* Add some gap between items */
+    }
+
+    .grid-item {
+        font-size: 0.8rem; /* Further reduce font size for very small screens */
+        padding: 0.2rem; /* Minimal padding */
+    }
+
+    #div1 {
+        padding: 0.8rem; /* Adjust text-preview padding */
+    }
 }

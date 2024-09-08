@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <header class="header"> 
+    <header class="header">
         <a href="index.html" class="logo">McStuffins</a>
 
         <input type="checkbox" id="check">
@@ -33,7 +33,7 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero overlay">
         <div class="hero-content">
             <h1>McStuffins' Hospital</h1>
             <a href="#booking" class="cta-button">Book Appointment</a>
@@ -41,31 +41,43 @@
     </section>
     
     <main>
-    <section class="health-network">
-        <div class="health-network__container">
-            <div class="health-network__left">
-                <h2>HEALTH NETWORK</h2>
+        <div class="health-network">
+            <h2 id="div2">Departments</h2>
+            <div class="grid-item" data-hover="general-medicine" id="div3"><a href="#">General Medicine</a></div>
+            <div class="grid-item" data-hover="surgery" id="div4"><a href="#">Surgery</a></div>
+            <div class="grid-item" data-hover="pediatrics" id="div5"><a href="#">Pediatrics</a></div>
+            <div class="grid-item" data-hover="maternity-care" id="div6"><a href="#">Maternity Care</a></div>
+            <div class="grid-item" data-hover="emergency-care" id="div7"><a href="#">Emergency Care</a></div>
+            <div class="grid-item" data-hover="rehabilitation" id="div8"><a href="#">Rehabilitation</a></div>
+            <div class="text-preview" id="div1">
+                <h2 class="default-text">Health Network</h2>
                 <p class="default-text">Hover over a department to see more details.</p>
-                <p class="hover-text" data-department="general-medicine">General Medicine: Provides comprehensive primary care for adults.</p>
-                <p class="hover-text" data-department="surgery">Surgery: Offers a full range of surgical procedures with cutting-edge technology.</p>
-                <p class="hover-text" data-department="pediatrics">Pediatrics: Focuses on the health and well-being of infants, children, and adolescents.</p>
-                <p class="hover-text" data-department="maternity-care">Maternity Care: Ensures safe and comfortable childbirth and prenatal care.</p>
-                <p class="hover-text" data-department="emergency-care">Emergency Care: Provides urgent treatment for critical and life-threatening conditions.</p>
-                <p class="hover-text" data-department="rehabilitation">Rehabilitation: Helps patients recover and regain independence after illness or injury.</p>
-            </div>
-            <div class="health-network__right">
-                <h2>Departments</h2>
-                <div class="grid-container">
-                    <div class="grid-item" data-hover="general-medicine"><a href="#">General Medicine</a></div>
-                    <div class="grid-item" data-hover="surgery"><a href="#">Surgery</a></div>
-                    <div class="grid-item" data-hover="pediatrics"><a href="#">Pediatrics</a></div>
-                    <div class="grid-item" data-hover="maternity-care"><a href="#">Maternity Care</a></div>
-                    <div class="grid-item" data-hover="emergency-care"><a href="#">Emergency Care</a></div>
-                    <div class="grid-item" data-hover="rehabilitation"><a href="#">Rehabilitation</a></div>
+                <div class="hover-text" data-department="general-medicine">
+                    <h2>General Medicine</h2>
+                    <p>Provides comprehensive primary care for adults.</p>
+                </div>
+                <div class="hover-text" data-department="surgery">
+                    <h2>Surgery</h2>
+                    <p>Offers a full range of surgical procedures with cutting-edge technology</p>
+                </div>
+                <div class="hover-text" data-department="pediatrics">
+                    <h2>Pediatrics</h2>
+                    <p>Focuses on the health and well-being of infants, children, and adolescents.</p>
+                </div>
+                <div class="hover-text" data-department="maternity-care">
+                    <h2>Maternity Care</h2>
+                    <p>Ensures safe and comfortable childbirth and prenatal care.</p>
+                </div>
+                <div class="hover-text" data-department="emergency-care">
+                    <h2>Emergency Care</h2>
+                    <p>Provides urgent treatment for critical and life-threatening conditions.</p>
+                </div>
+                <div class="hover-text" data-department="rehabilitation">
+                    <h2>Rehabilitation</h2>
+                    <p>Helps patients recover and regain independence after illness or injury.</p>
                 </div>
             </div>
         </div>
-    </section> 
     
     <div class="blog">
         <div class="card">

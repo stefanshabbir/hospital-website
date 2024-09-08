@@ -223,7 +223,7 @@ cursor: pointer;
     }
         
     .tab-container {
-        margin: 2rem;
+        margin: 2rem auto;
     }
 
     .input:nth-child(2n) {
@@ -233,7 +233,7 @@ cursor: pointer;
     .sex-option {
         display: flex;
         justify-content: space-between;
-        width: 60%;
+        /* width: 60%; */
     }
 
 
