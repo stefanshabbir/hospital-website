@@ -40,14 +40,24 @@
             <div class="tab">
                 <form>
                     <h2>Registration</h2>
+                    <h4 class="legend"><i>Personal Information</i></h4>
                     <div class="content">
                         <div class="input">
                             <input type="text" name="name" placeholder="Enter Fullname" required>
                             <label for="name">Full Name</label>
                         </div>
                         <div class="input">
-                            <input type="text" name="uname" placeholder="Enter Username" required>
-                            <label for="username">Username</label>
+                            <input type="date" id="birthday" name="birthday" required>
+                            <label for="birthday">Birthday</label>
+                        </div>
+                        <span class="sex">Sex</span>
+                        <div class="sex-option">
+                            <input type="radio" name="sex" id="male">
+                            <label for="male">Male</label>
+                            <input type="radio" name="sex" id="female">
+                            <label for="female">Female</label>
+                            <input type="radio" name="sex" id="other">
+                            <label for="other">Other</label>
                         </div>
                         <div class="input">
                             <input type="email" name="email" placeholder="Enter E-Mail" required>
@@ -57,18 +67,27 @@
                             <input type="tel" name="phoneNumber" placeholder="Enter Phone Number" required>
                             <label for="phonenumber">Phone Number</label>
                         </div>
+                    </div>
+                    <h4 class="legend"><i>Address</i></h4>
+                    <div class="content">
+                        <div class="input">
+                            <input type="text" name="uname" placeholder="Enter Username" required>
+                            <label for="username">Username</label>
+                        </div>
                         <div class="input">
                             <input type="password" name="password" placeholder="Enter Password" required>
                             <label for="password">Password</label>
                         </div>
-                        <span class="sex">Sex</span>
-                        <div class="sex-option">
-                            <input type="radio" name="sex" id="male">
-                            <label for="sex">Male</label>
-                            <input type="radio" name="sex" id="female">
-                            <label for="sex">Female</label>
-                            <input type="radio" name="sex" id="other">
-                            <label for="sex">Other</label>
+                    </div>
+                    <h4 class="legend"><i>Account</i></h4>
+                    <div class="content">
+                        <div class="input">
+                            <input type="text" name="uname" placeholder="Enter Username" required>
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="input">
+                            <input type="password" name="password" placeholder="Enter Password" required>
+                            <label for="password">Password</label>
                         </div>
                     </div>
                     <div class="button-container">

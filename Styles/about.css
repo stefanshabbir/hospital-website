@@ -18,6 +18,10 @@ body {
     padding: 20px;
 }
 
+section {
+    background: radial-gradient(circle, rgba(0,102,255,1) 0%, rgba(0,188,212,1) 100%);
+}
+
 .head-wrap {
     position: relative;
     height: 30vh;
