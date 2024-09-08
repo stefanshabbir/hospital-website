@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.3rem 5%;
+    padding: 1.3rem 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -124,17 +124,17 @@
     }
 
     .navbar a {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 1.5rem;
         margin: 1rem 0;
         transition: 0.3s ease;
     }
 
     .cta {
-        padding: .6rem .8rem;
         background-color: #14264C;
         border-radius: 2rem;
-        margin: 1rem 5rem;
     }
 
     #check:checked~.navbar ul {

@@ -12,6 +12,14 @@
     --blue: #3eb7ed;
     --light-blue: #5EF5F8;
     --dark-blue: #14264C;
+
+    --font-size-title: 32px;
+    --line-height-title: 1.4;
+    --font-size-caption: 14px;
+    --line-height-caption: 1.2;
+
+    --color-text: #222022;
+    --border-radius-primary: 32px; 
 }
 
 body {
@@ -38,7 +46,7 @@ body {
 }
 
 .hero {
-    background: url('Images/young-female-doctor-posing-corridor-hospital.jpg') no-repeat;
+    background: url('../Images/young-female-doctor-posing-corridor-hospital.jpg') no-repeat;
     background-size: cover;
     background-position: top center;
     overflow: hidden;
@@ -125,6 +133,11 @@ body {
     width: 65%;
 }
 
+.health-network__right h2 {
+    width: 65%;
+    text-orientation: upright;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -180,4 +193,82 @@ body {
 .grid-item:hover[data-hover="emergency-care"] ~ .health-network__left .hover-text[data-department="emergency-care"],
 .grid-item:hover[data-hover="rehabilitation"] ~ .health-network__left .hover-text[data-department="rehabilitation"] {
     display: block;
+}
+
+/* Blog CSS */
+
+.blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+width: 90%;
+border-radius: var(--border-radius-primary);
+box-shadow: 24px 24px 80px rgba(0,0,0,0.1);
+padding: 20px 20px 28px 20px;
+margin: .4rem 3rem;
+display: flex;
+gap: 2rem;
+background-color: #fff;
+}
+
+.card__image {
+width: 100%;
+max-height: 300px;
+border-radius: var(--border-radius-primary);
+object-fit: cover;
+margin-bottom: 1rem;
+}
+
+
+.card__date {
+display: block;
+font-size: var(--font-size-caption);
+line-height: var(--line-height-caption);
+text-transform: uppercase;
+color: var(--color-text);
+margin-bottom: 6px;
+
+}
+
+.card__title {
+font-size: var(--font-size-title);
+line-height: var(--line-height-title);
+color: var(--color-text);
+background-image: linear-gradient(90deg, var(--light-blue), var(--blue));
+background-size: 0;
+background-repeat: no-repeat;
+background-position: 0 85%;
+padding: 0 4px;
+margin-left: -4px;
+transition: 0.3s ;
+}
+
+.card:hover .card__title {
+    animation: underline 1s linear;
+    animation-fill-mode: forwards
+}
+
+@keyframes underline {
+
+    0% {
+        background-size: 0% 42%;
+    }
+
+    50% {
+        background-size: 50% 42%;
+    }
+
+    100% {
+        background-size: 100% 42%;
+    }
+    
+
+}
+
+.card p {
+    font-size: 1rem;
 }
