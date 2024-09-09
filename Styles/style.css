@@ -56,7 +56,7 @@ body {
     background-position: top center;
     overflow: hidden;
     /* margin-top: 10vh; */
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
