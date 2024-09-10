@@ -13,13 +13,14 @@ body {
 }
 
 .branch {
-    background: radial-gradient(circle, rgba(0,102,255,1) 0%, rgba(0,188,212,1) 100%);
+    /* background: radial-gradient(circle, rgba(0,102,255,1) 0%, rgba(0,188,212,1) 100%); */
     margin-top: 100px;
     padding: 20px;
 }
 
 section {
     background: radial-gradient(circle, rgba(0,102,255,1) 0%, rgba(0,188,212,1) 100%);
+    background-color: #fff;
 }
 
 .head-wrap {
@@ -184,27 +185,39 @@ section p {
 .table_header {
     width: 100%;
     height: 10%;
-    background-color: #fff5;
+    background-color: rgba(255, 255, 255, 0.219);
     padding: .8rem 1rem;
+    text-align: center;
 }
 
-.table_body {
-    width: 95%;
+.body {
+    width: 80%;
     max-height: calc(89% - .8rem);
-    background-color: #fffb;
+    background-color: rgba(143, 143, 143, 0.459);
 
     margin: .8rem auto;
     border-radius: .6rem;
-    overflow: hidden;
+    overflow: auto;
 }
 
-table, th, tr {
-    padding: 1rem;
+table, th, td {
+    padding: .7rem;
     border-collapse: collapse;
+    width: fit-content;
 }
 
 thead th {
     position: sticky;
+    top: 0;
+    background-color: #3e4e5c2f;
+}
+
+.body tr:nth-child(even) {
+    background-color: #0000000b;
+} 
+
+.body tr:hover {
+    background-color: rgba(202, 202, 202, 0.212);
 }
 
 /* Breakpoints */

@@ -8,5 +8,94 @@
 }
 
 body {
+    height: 100dvh;
+    width: 100vw;
     background: #2e364a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.doctor-card {
+    position: relative;
+    width: 12.5em;
+}
+
+.front {
+    transition: 250ms;
+}
+
+.front img {
+    width: 100%;
+    height: auto;
+}
+
+.doctor-card:hover .front h3 {
+    animation: names 250ms forwards;
+}
+
+
+.back {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.background {
+    background: #234;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(.2, .9);
+}
+
+.doctor-card:hover .background {
+    transform: scale(1.4, 1.4);
+    opacity: 1;
+    z-index: 2;
+    transition: transform 250ms ease-in-out;
+}
+
+.doctor-card:hover .front {
+    transform: translateY(-30%) scale(.9);
+    position: relative;
+    z-index: 3;
+}
+
+.doctor-card:hover .back {
+    opacity: 1;
+    z-index: 3;
+    transition: 250ms;
+}
+
+@keyframes names {
+    0% {
+        text-align: left;
+        opacity: 1;
+    }
+    10% {
+        text-align: left;
+        opacity: 0;
+    }
+    30% {
+        text-align: center;
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100% {
+        text-align: center;
+        opacity: 1;
+        transform: scale(1.2);
+    }
 }
