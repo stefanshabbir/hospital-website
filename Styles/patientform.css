@@ -195,6 +195,17 @@ cursor: pointer;
     margin: 0;
 }
 
+.address input {
+    width: 100%;
+}
+
+#province {
+    justify-content: start;
+}
+
+#postal {
+    justify-content: end;
+}
 
 
 .button-container {
