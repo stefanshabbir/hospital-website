@@ -4,85 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/doctors.css">
+    <link rel="stylesheet" href="Styles/navbar.css">
     <title>Document</title>
 </head>
 <body>
-    <section id="doctors-page">
-        <div class="page-header">
-            <h1>Meet Our Doctors</h1>
-            <p>Dedicated to Providing Exceptional Care</p>
+    <header class="header">
+        <a href="index.html" class="logo">McStuffins</a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="#">Consultations</a></li>
+                <li><a href="#">Pharmacy</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="cta" href="patientportal.html">Log In/ Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="head-wrap">
+            <h1>Our Doctors</h1>
         </div>
-    
-        <!-- Cardiology Department -->
-        <div class="department-section">
-            <h2>Cardiology</h2>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <div class="front">
-                        <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
-                        <h3>Dr. Jane Doe</h3>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+        </div>
+        <section id="doctors-page">
+            <div class="page-header">
+                <h1>Meet Our Doctors</h1>
+                <p>Dedicated to Providing Exceptional Care</p>
+            </div>
+        
+            <!-- Cardiology Department -->
+            <div class="department-section">
+                <h2>Cardiology</h2>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <h3>Dr. Jane Doe</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Doe has over 15 years of experience in cardiology, specializing in heart failure and hypertension. <br>Dr. Doe has over 15 years of experience in cardiology, specializing in heart failure and hypertension. </p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
                     </div>
-                    <div class="back">
-                        <p>Dr. Doe has over 15 years of experience in cardiology, specializing in heart failure and hypertension. <br>Dr. Doe has over 15 years of experience in cardiology, specializing in heart failure and hypertension. </p>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <h3>Dr. John Smith</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Smith is an expert in interventional cardiology with numerous successful procedures </p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
                     </div>
-                    <div class="background"></div>
-                </div>
-                <div class="doctor-card">
-                    <div class="front">
-                        <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
-                        <h3>Dr. John Smith</h3>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
-                    </div>
-                    <div class="back">
-                        <p>Dr. Smith is an expert in interventional cardiology with numerous successful procedures </p>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
-                    </div>
-                    <div class="background"></div>
                 </div>
             </div>
-        </div>
-    
-        <!-- Neurology Department -->
-        <div class="department-section">
-            <h2>Neurology</h2>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <img src="doctor3.jpg" alt="Dr. Emily Clark">
-                    <h3>Dr. Emily Clark</h3>
-                    <p>Dr. Clark specializes in neurodegenerative diseases and has extensive research experience.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
-                </div>
-                <div class="doctor-card">
-                    <img src="doctor4.jpg" alt="Dr. Michael Lee">
-                    <h3>Dr. Michael Lee</h3>
-                    <p>Dr. Lee is renowned for his work in treating epilepsy and other seizure disorders.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Pediatrics Department -->
-        <div class="department-section">
-            <h2>Pediatrics</h2>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <img src="doctor5.jpg" alt="Dr. Sarah Brown">
-                    <h3>Dr. Sarah Brown</h3>
-                    <p>Dr. Brown is dedicated to pediatric care, with a focus on childhood asthma and allergies.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
-                </div>
-                <div class="doctor-card">
-                    <img src="doctor6.jpg" alt="Dr. David Wilson">
-                    <h3>Dr. David Wilson</h3>
-                    <p>Dr. Wilson has extensive experience in neonatology and newborn care.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+        
+            <!-- Neurology Department -->
+            <div class="department-section">
+                <h2>Neurology</h2>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <img src="doctor3.jpg" alt="Dr. Emily Clark">
+                        <h3>Dr. Emily Clark</h3>
+                        <p>Dr. Clark specializes in neurodegenerative diseases and has extensive research experience.</p>
+                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="doctor4.jpg" alt="Dr. Michael Lee">
+                        <h3>Dr. Michael Lee</h3>
+                        <p>Dr. Lee is renowned for his work in treating epilepsy and other seizure disorders.</p>
+                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-    </section>
-    
+        
+            <!-- Pediatrics Department -->
+            <div class="department-section">
+                <h2>Pediatrics</h2>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <img src="doctor5.jpg" alt="Dr. Sarah Brown">
+                        <h3>Dr. Sarah Brown</h3>
+                        <p>Dr. Brown is dedicated to pediatric care, with a focus on childhood asthma and allergies.</p>
+                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="doctor6.jpg" alt="Dr. David Wilson">
+                        <h3>Dr. David Wilson</h3>
+                        <p>Dr. Wilson has extensive experience in neonatology and newborn care.</p>
+                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+    </main>
 </body>
 </html>
