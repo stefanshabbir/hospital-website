@@ -5,25 +5,27 @@
     font-family: sans-serif;
 }
 
-.intro {
-    margin: 2vh 4rem;
-    color: #1d1d1da8;
-}
 
 .head-wrap {
     position: relative;
     height: 30vh;
     background-color: #00A2E1;
-
+    
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
+.intro {
+    margin: 2vh clamp(2rem, 4vw, 4rem);
+    color: #1d1d1da8;
+}
+
 .head-wrap h1 {
+    color: #fff;
     margin-top: 10vh;
-    margin-left: 5rem;
-    font-size: 3rem;
+    margin-left: clamp(2rem, 4vw, 4rem);
+    font-size: clamp(2.3rem , 4vw, 3rem);
 }
 
 #doctors-page {
@@ -166,5 +168,11 @@
         text-align: center;
         opacity: 1;
         transform: scale(1.2);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .head-wrap h1 {
+        margin: 10vh auto 0;
     }
 }
