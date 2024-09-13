@@ -30,6 +30,10 @@ body {
     transition: 250ms;
 }
 
+.front > p {
+    display: none;
+}
+
 .front img {
     width: 100%;
     height: auto;
@@ -37,6 +41,9 @@ body {
 
 .doctor-card:hover .front h3 {
     animation: names 250ms forwards;
+}
+.doctor-card:hover .front p {
+display: block;
 }
 
 
@@ -67,7 +74,7 @@ body {
     transition: transform 250ms ease-in-out;
 }
 
-.doctor-card:hover .front {
+.doctor-card:hover .front  {
     transform: translateY(-30%) scale(.9);
     position: relative;
     z-index: 3;

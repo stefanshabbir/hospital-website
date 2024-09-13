@@ -4,85 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/doctors.css">
+    <link rel="stylesheet" href="Styles/navbar.css">
     <title>Document</title>
 </head>
 <body>
-    <section id="doctors-page">
-        <div class="page-header">
-            <h1>Meet Our Doctors</h1>
-            <p>Dedicated to Providing Exceptional Care</p>
+
+
+    <header class="header">
+        <a href="index.html" class="logo">McStuffins
+            <div class="logo-icon-wrap">
+                <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3300 2200"><path id="heart" d="M2381.7,971.49c-12.49,198.89-98.39,381.33-241.49,519.68,25.06-44.3,48.11-89.93,67.15-137.12,34.11-83.89,56-173.24,61.5-262.21,5.68-92.39-2.09-187.8-38.11-273.75-29-70.26-94.14-182.35-236.17-182.35-184,0-296.26,195.63-361.48,296.94-75.49-101.86-208.18-282.41-371.63-279.25-115.9,2.25-185.07,121.52-209,225.85-9.33,39.07-13.33,79.64-13.64,120-6.13,343.8,243.62,628.27,508.7,820.36,24,17.41,48.45,34.37,73.35,50.57,5,3.23,10.06,6.45,15.15,9.6-116.29-33.64-225.78-88.61-327.07-154.87C1045.11,1550.73,861.17,1288.66,855,965.2c-1.2-83.66,12.32-167.28,44-245.37,58.06-146.9,185.73-263.56,348.22-274.67,159.25-12.33,295.16,74.93,391.65,193.86q22.32-25.86,47.23-49.58c61.66-58.37,136.83-104.57,220.9-122.54,99.13-21.63,204.5-2.31,287.62,56.51C2335.83,623,2392.56,805,2381.7,971.49Z"/></svg>
+                <svg class="pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3007.57 1170.06">
+                    <path id="Path" d="M23.3 681.15h304l59.59-111.25 181.1 391.17 259.64-846.7 278.88 1037.04 177.39-616.16 135.55 336.11 83.06-190.64h341.15"/>
+                </svg>
+            </div>
+        </a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M4 6h16v2H4z"></path>
+                <path d="M4 12h16v2H4z"></path>
+                <path d="M4 18h16v2H4z"></path>
+            </svg>
+        
+            <!-- Close Icon -->
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M16.192 6.344l-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+            </svg>
+        </label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="consultations.html">Consultations</a></li>
+                <li><a href="pharmacy.html">Pharmacy</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="cta" href="patientportal.html">Log In/ Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="head-wrap">
+            <h1>Our Doctors</h1>
         </div>
-    
-        <!-- Cardiology Department -->
-        <div class="department-section">
-            <h2>Cardiology</h2>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <div class="front">
-                        <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
-                        <h3>Dr. Jane Doe</h3>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
-                    </div>
-                    <div class="back">
-                        <p>Dr. Doe has over 15 years of experience in cardiology, specializing in heart failure and hypertension. <br>Dr. Doe has over 15 years of experience in cardiology, specializing in heart failure and hypertension. </p>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
-                    </div>
-                    <div class="background"></div>
+        <section class="intro">
+            <p>At McStuffins Hospital, we are committed to providing top-tier healthcare services tailored to meet the needs of our diverse patient population. Our state-of-the-art facilities and dedicated medical professionals ensure that you receive the highest standard of care, whether you’re visiting for a routine check-up or a complex procedure. Explore our wide range of services designed to promote health, wellness, and recovery.</p>
+        </section>
+
+        <section id="doctors-page">
+        
+            <!-- OPD Department -->
+            <div class="department-section">
+                <div class="dept-text-wrap">
+                    <h2>General Medicine</h2>
                 </div>
-                <div class="doctor-card">
-                    <div class="front">
-                        <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
-                        <h3>Dr. John Smith</h3>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <em>General Practitioner</em>
+                            <h3>Dr. Olivia Carter</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Olivia Carter has over 15 years of experience in diagnosing and treating a wide range of medical conditions. Known for her thorough and compassionate approach, she takes time to understand each patient’s needs, ensuring comprehensive care.</p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
                     </div>
-                    <div class="back">
-                        <p>Dr. Smith is an expert in interventional cardiology with numerous successful procedures </p>
-                        <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <em>Family Medicine Specialist</em>
+                            <h3>Dr. Thomas Hale</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Thomas Hale specializes in family medicine and has a deep passion for preventive care. He is dedicated to helping patients maintain a healthy lifestyle and addressing any health issues before they become serious problems.</p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
                     </div>
-                    <div class="background"></div>
+                    <!-- <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <h3>Dr. John Smith</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Smith is an expert in interventional cardiology with numerous successful procedures </p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <h3>Dr. John Smith</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Smith is an expert in interventional cardiology with numerous successful procedures </p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
+                    </div> -->
                 </div>
             </div>
-        </div>
-    
-        <!-- Neurology Department -->
-        <div class="department-section">
-            <h2>Neurology</h2>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <img src="doctor3.jpg" alt="Dr. Emily Clark">
-                    <h3>Dr. Emily Clark</h3>
-                    <p>Dr. Clark specializes in neurodegenerative diseases and has extensive research experience.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+        
+            <!-- Surgery Department -->
+            <div class="department-section">
+                <div class="dept-text-wrap">
+                    <h2>Surgery</h2>
                 </div>
-                <div class="doctor-card">
-                    <img src="doctor4.jpg" alt="Dr. Michael Lee">
-                    <h3>Dr. Michael Lee</h3>
-                    <p>Dr. Lee is renowned for his work in treating epilepsy and other seizure disorders.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <em>Chief Surgeon</em>
+                            <h3>Dr. Jacob Dawson</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Jacob Dawson is a highly skilled and experienced surgeon in both general and specialized surgeries. His calm and confident demeanor, paired with his precision in the operating room, has earned him a stellar reputation at McStuffins Hospital.</p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
+                    </div>    
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <em>Cardiothoracic Surgeon</em>
+                            <h3>Dr. Sophia Nguyen</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>With a focus on heart and lung surgeries, Dr. Sophia Nguyen has performed countless successful procedures. Her innovative techniques and patient-centered care have made her a leader in the field of cardiothoracic surgery.</p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
+                    </div>           
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <em>Orthopedic Surgeon</em>
+                            <h3>Dr. Michael Bennett</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Specializing in bone and joint surgery, Dr. Michael Bennett is known for helping patients recover from injuries and improve mobility. His expertise includes both minimally invasive procedures and complex reconstructive surgeries.</p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
+                    </div>                      
                 </div>
             </div>
-        </div>
-    
-        <!-- Pediatrics Department -->
-        <div class="department-section">
-            <h2>Pediatrics</h2>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <img src="doctor5.jpg" alt="Dr. Sarah Brown">
-                    <h3>Dr. Sarah Brown</h3>
-                    <p>Dr. Brown is dedicated to pediatric care, with a focus on childhood asthma and allergies.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+        
+            <!-- Pediatrics Department -->
+            <div class="department-section">
+                <div class="dept-text-wrap">
+                    <h2>Pediatrics</h2>
                 </div>
-                <div class="doctor-card">
-                    <img src="doctor6.jpg" alt="Dr. David Wilson">
-                    <h3>Dr. David Wilson</h3>
-                    <p>Dr. Wilson has extensive experience in neonatology and newborn care.</p>
-                    <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <em>Pediatrician</em>
+                            <h3>Dr. Emily Foster</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Emily Foster is passionate about providing top-quality care to children of all ages. Her friendly and approachable manner helps children feel at ease during their visits, and she is dedicated to ensuring the well-being of every child she treats.</p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="front">
+                            <img src="Images/senior-man-sitting-wheelchair-doctor1.jpg" alt="Dr. Jane Doe">
+                            <em>Pediatric Specialist</em>
+                            <h3>Dr. Samuel Brooks</h3>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="back">
+                            <p>Dr. Samuel Brooks focuses on diagnosing and managing complex pediatric conditions. He works closely with families to provide customized care plans that ensure the best outcomes for his young patients.</p>
+                            <a href="/book-consultation" class="cta-button">Book a Consultation</a>
+                        </div>
+                        <div class="background"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-    </section>
-    
+        
+        </section>
+    </main>
 </body>
 </html>
