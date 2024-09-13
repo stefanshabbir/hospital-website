@@ -154,14 +154,29 @@ p {
 
 /* BREAKPOINT */
 
-@media (max-width: 992px) {
+
+@media (max-width: 1269px) {
     .header {
-        padding: 1.3rem 5%;
+        padding: 1.3rem;
         display: flex;
+    }
+
+    .navbar a {
+        margin: .7rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1124px) {
+    .header {
+        font-size: 10px;
+    }
+
+    .navbar a {
+        margin: .5rem;
+    }
+}
+
+@media (max-width: 1080px) {
     .icons {
         display:inline-flex;
         position: relative;

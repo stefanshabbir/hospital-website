@@ -15,7 +15,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    padding: 2rem;
+    padding: 2.5rem;
     overflow: hidden;
 }
 
@@ -38,6 +38,9 @@ body {
     flex-direction: column;
     justify-content: space-between; 
     height: 400px; 
+    transition: .5s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .card-image {
@@ -73,12 +76,14 @@ body {
 }
 
 .registration {
+    position: relative;
     width: 100%;
     background-color: #00A2E1;
     border-radius: 1rem;
     text-align: center;
     padding: 1.5rem;
     margin-bottom: 1.4rem;
+    z-index: 1;
 }
 
 .registration h2, p {

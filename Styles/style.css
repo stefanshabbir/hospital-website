@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-tr:nth-child()
 
 :root {
     /* Color Palette */
@@ -105,7 +104,7 @@ body {
 }
 
 .grid-item {
-    background-color: var(--dark-blue);
+    background-color:#04324D;
     border-radius: 8px;
     text-align: center;
     color: white;
