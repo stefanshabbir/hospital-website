@@ -6,7 +6,7 @@
 }
 
 .pulse {
-    width: 150px;
+    width: 100px;
     position: relative;
     margin: 20px auto;
 }
@@ -15,7 +15,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    backdrop-filter: blur(50px);
     top: 0;
     right: 0;  
     animation: heartRateIn 2.5s linear infinite;
@@ -25,12 +25,10 @@
     position: absolute;
     width: 120%;
     height: 100%;
-    background-color: #ffffff;
+    backdrop-filter: blur(50px);
     top: 0;
     right: -120%;  
     animation: heartRateOut 2.5s linear infinite;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(to right, rgb(255, 255, 255)0%, rgb(255, 255, 255)80%, rgba(0, 0, 0, 0)100%);
 }
 
 @keyframes heartRateIn {

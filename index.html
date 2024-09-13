@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="Styles/navbar.css">
-    <link rel="stylesheet" href="Styles/footer.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Styles/components.css">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/png">
     <title>Home</title>
 </head>
 <body>
     
     <header class="header">
-        <a href="index.html" class="logo">McStuffins</a>
+        <a href="index.html" class="logo">McStuffins
+            <div class="logo-icon-wrap">
+                <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3300 2200"><path id="heart" d="M2381.7,971.49c-12.49,198.89-98.39,381.33-241.49,519.68,25.06-44.3,48.11-89.93,67.15-137.12,34.11-83.89,56-173.24,61.5-262.21,5.68-92.39-2.09-187.8-38.11-273.75-29-70.26-94.14-182.35-236.17-182.35-184,0-296.26,195.63-361.48,296.94-75.49-101.86-208.18-282.41-371.63-279.25-115.9,2.25-185.07,121.52-209,225.85-9.33,39.07-13.33,79.64-13.64,120-6.13,343.8,243.62,628.27,508.7,820.36,24,17.41,48.45,34.37,73.35,50.57,5,3.23,10.06,6.45,15.15,9.6-116.29-33.64-225.78-88.61-327.07-154.87C1045.11,1550.73,861.17,1288.66,855,965.2c-1.2-83.66,12.32-167.28,44-245.37,58.06-146.9,185.73-263.56,348.22-274.67,159.25-12.33,295.16,74.93,391.65,193.86q22.32-25.86,47.23-49.58c61.66-58.37,136.83-104.57,220.9-122.54,99.13-21.63,204.5-2.31,287.62,56.51C2335.83,623,2392.56,805,2381.7,971.49Z"/></svg>
+                <svg class="pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3007.57 1170.06">
+                    <path id="Path" d="M23.3 681.15h304l59.59-111.25 181.1 391.17 259.64-846.7 278.88 1037.04 177.39-616.16 135.55 336.11 83.06-190.64h341.15"/>
+                </svg>
+            </div>
+        </a>
 
         <input type="checkbox" id="check">
         <label for="check" class="icons">
-            <i class='bx bx-menu' id="menu-icon"></i>
-            <i class='bx bx-x' id="close-icon"></i>
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M4 6h16v2H4z"></path>
+                <path d="M4 12h16v2H4z"></path>
+                <path d="M4 18h16v2H4z"></path>
+            </svg>
+        
+            <!-- Close Icon -->
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M16.192 6.344l-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+            </svg>
         </label>
 
         <nav class="navbar">
@@ -54,54 +69,51 @@
                 <p class="default-text">Hover over a department to see more details.</p>
                 <div class="hover-text" data-department="general-medicine">
                     <h2>General Medicine</h2>
-                    <p>Provides comprehensive primary care for adults.</p>
+                    <p>The General Medicine department at McStuffins Hospital is the heart of patient care, providing comprehensive health services for a wide range of conditions. Our team of expert physicians focuses on disease prevention, diagnosis, and treatment, ensuring that every patient receives personalized care. Whether you’re coming in for a routine check-up or need more specialized care, our general medicine department is here to help you maintain a healthy life.</p>
                 </div>
                 <div class="hover-text" data-department="surgery">
                     <h2>Surgery</h2>
-                    <p>Offers a full range of surgical procedures with cutting-edge technology</p>
+                    <p>Our Surgery department is equipped with state-of-the-art technology and staffed by some of the most skilled surgeons in the region. We offer a wide array of surgical procedures, from minimally invasive surgeries to complex operations. Patient safety and recovery are our top priorities, with dedicated teams working to provide you the best surgical care available.</p>
                 </div>
                 <div class="hover-text" data-department="pediatrics">
                     <h2>Pediatrics</h2>
-                    <p>Focuses on the health and well-being of infants, children, and adolescents.</p>
+                    <p>At McStuffins Hospital, the Pediatrics department offers specialized care for children from infancy through adolescence. Our pediatricians focus on both the physical and emotional well-being of young patients, providing a child-friendly environment and expert medical attention. We are committed to supporting the health of children with a range of medical services tailored to their developmental needs.</p>
                 </div>
                 <div class="hover-text" data-department="maternity-care">
                     <h2>Maternity Care</h2>
-                    <p>Ensures safe and comfortable childbirth and prenatal care.</p>
+                    <p>Our maternity care department is dedicated to ensuring the health and well-being of both mother and baby throughout pregnancy, delivery, and postpartum care. Our experienced obstetricians, midwives, and nurses provide compassionate and personalized care, offering everything from prenatal checkups to childbirth support and postnatal care. Whether you are a first-time mother or expanding your family, our team is here to guide you through every step of this incredible journey.</p>
                 </div>
                 <div class="hover-text" data-department="emergency-care">
                     <h2>Emergency Care</h2>
-                    <p>Provides urgent treatment for critical and life-threatening conditions.</p>
+                    <p>In times of urgent medical needs, our emergency care department is available 24/7 to provide fast and effective treatment. Staffed with highly trained emergency physicians, nurses, and paramedics, we are prepared to handle everything from minor injuries to life-threatening emergencies. With state-of-the-art technology and a commitment to rapid response, our goal is to stabilize and treat patients swiftly, ensuring the best possible outcomes during critical moments.</p>
                 </div>
                 <div class="hover-text" data-department="rehabilitation">
                     <h2>Rehabilitation</h2>
-                    <p>Helps patients recover and regain independence after illness or injury.</p>
+                    <p>Our rehabilitation department is focused on helping patients regain strength, mobility, and independence following injury, surgery, or illness. We offer a comprehensive range of physical, occupational, and speech therapies tailored to each individual’s needs. Our experienced therapists work closely with patients to develop customized treatment plans that promote healing, improve function, and restore quality of life.</p>
                 </div>
             </div>
         </div>
     
     <div class="blog">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" class="card__image" alt="brown couch" />
+            <img src="Images/article1.webp" class="card__image" alt="Mother and daughter talking to African American doctor while wearing face masks at hospital waiting room" />
             <div class="card__content">
-            <time datetime="2021-03-30" class="card__date">30 März 2021</time>
-            <span class="card__title">Duis autem vel eum iriure dolor in hend in vulputate</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur recusandae eligendi totam aliquam? Dolorum eaque exercitationem provident veritatis! Aliquid, possimus.</p>
+                <span class="card__title">Compassionate Healthcare for Every Family</span>
+                <p>At McStuffins Hospital, we believe that healthcare goes beyond medicine. Our compassionate doctors and nurses are committed to offering care with empathy, understanding that every patient has unique needs. <br><br> We aim to foster a supportive environment where patients and their families feel valued and confident in their care. Whether you're visiting for a routine check-up or require advanced treatment, we are here for you at every step.</p>
             </div>
         </div>
         <div class="card">   
             <div class="card__content">
-            <time datetime="2021-03-30" class="card__date">30 März 2021</time>
-            <span class="card__title">Duis autem vel eum iriure dolor in hend in vulputate</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur recusandae eligendi totam aliquam? Dolorum eaque exercitationem provident veritatis! Aliquid, possimus.</p>
+                <span class="card__title">Advanced Technology, Innovative Treatments</span>
+                <p>McStuffins Hospital prides itself on being at the forefront of medical innovation. Our facility is equipped with cutting-edge technology, allowing us to offer advanced diagnostics and treatments. From robotic surgery to state-of-the-art imaging, we ensure that our patients benefit from the latest medical advancements. With innovation guiding our care, we work to provide quicker recoveries and better health outcomes.</p>
             </div>
-            <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" class="card__image" alt="brown couch" />
+            <img src="Images/article2.webp" class="card__image" alt="Empty examination office room having brain tomography on computer screen ready for oncology consultation. Hospital room with nobody in it equipped with professional medical tools. Mri brain diagram" />
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" class="card__image" alt="brown couch" />
+            <img src="Images/article3.webp" class="card__image" alt="Nurse preparing for consult" />
             <div class="card__content">
-            <time datetime="2021-03-30" class="card__date">30 März 2021</time>
-            <span class="card__title">Duis autem vel eum iriure dolor in hend in vulputate</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur recusandae eligendi totam aliquam? Dolorum eaque exercitationem provident veritatis! Aliquid, possimus.</p>
+                <span class="card__title">Your Trusted Healthcare Partner</span>
+                <p>McStuffins Hospital is more than just a medical center — we’re a partner in your healthcare journey. We focus on building lasting relationships with our patients, ensuring that they feel supported throughout their lives. Our team of healthcare professionals is dedicated to offering comprehensive care, from preventive services to long-term treatment plans. Your health is our top priority, and we are committed to being a trusted healthcare partner for you and your family.</p>
             </div>
         </div>
     </div>

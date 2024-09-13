@@ -1,26 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif; 
 }
+tr:nth-child()
 
 :root {
+    /* Color Palette */
+    --primary-color: #00A2E1;
+    --secondary-color: #5EF5F8;
+    --button-color: #005F8D;
     --green: #2add60;
-    --blue: #3eb7ed;
-    --light-blue: #5EF5F8;
-    --dark-blue: #14264C;
+    --dark-blue: #04324D;
+
 
     --font-size-title: 32px;
-    --line-height-title: 1.4;
-    --font-size-caption: 14px;
-    --line-height-caption: 1.2;
+    --line-height-title: 1.1;
 
     --color-text: #222022;
     --border-radius-primary: 32px; 
-    --box-shadow: 24px 24px 80px rgba(0,0,0,0.1);
+    --box-shadow: 24px 24px 80px rgba(0, 0, 0, 0.178);
 }
 
 body {
@@ -31,27 +30,12 @@ body {
     /* padding-top: 1000px; */
 }
 
-::-webkit-scrollbar {
-    background: black;
-    width: 8px;
-}
-  
-  /* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px var(--blue);
-}
-  
-::-webkit-scrollbar-thumb {
-    background: #6D9FCB;
-    border-radius: 4px;
-}
-
 .overlay {
     border-image: fill 1 radial-gradient(rgba(92, 91, 91, 0.753) 0%, rgba(67, 68, 68, 0.466) 90%);
 }
 
 .hero {
-    background: url('../Images/young-female-doctor-posing-corridor-hospital.jpg') no-repeat;
+    background: url('../Images/young-female-doctor-posing-corridor-hospital.webp') no-repeat;
     background-size: cover;
     background-position: top center;
     overflow: hidden;
@@ -81,7 +65,7 @@ body {
 
 .cta-button {
     padding: 0.8rem 2rem;
-    background-color: var(--green);
+    background-color: var(--button-color);
     color: white;
     text-decoration: none;
     font-size: clamp(1rem, 2vw, 1.3rem);
@@ -89,7 +73,9 @@ body {
 }
 
 .cta-button:hover {
-    background-color: var(--light-blue);
+    background-color: var(--secondary-color);
+    color: var(--color-text);
+    font-weight: 500;
 }
 
 .hero::before {
@@ -99,8 +85,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and transparency */
-    z-index: -1; /* Make sure the overlay stays behind the text */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; /* overlay stays behind the text */
 }
 
 /* Health Network Grid */
@@ -108,9 +94,10 @@ body {
 .health-network {
     margin: 2rem;
 	display: grid;
-	grid-template-rows: .25fr repeat(2, 1fr);
+	grid-template-rows: .4fr repeat(2, 1fr);
 	grid-template-columns: minmax(200px, 2fr) repeat(auto-fit, minmax(150px, 1fr));
 	gap: 1rem; 
+    
 
     animation: fade linear both;
     animation-timeline: view();
@@ -122,7 +109,7 @@ body {
     border-radius: 8px;
     text-align: center;
     color: white;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.4rem, 3rem);
     box-shadow: var(--box-shadow);
 
     display: flex;
@@ -133,7 +120,7 @@ body {
 }
 
 .grid-item a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -148,14 +135,16 @@ body {
     flex-direction: column;
     justify-content: center;
     box-shadow: var(--box-shadow);
-    
+
+
+    font-size: clamp(.5rem, 1rem, 1rem);
     width: 100%;
     height: 40vh;
     transition: all .5s ease;
 }
 
 .grid-item:hover {
-    background-color: #557ba1;
+    background-color: var(--button-color);
 }
 
 .hover-text {
@@ -181,14 +170,15 @@ body {
 
 #div1 {
 	grid-area: 1 / 1 / 4 / 2;
-    background-color: #2aa5c9;
+    background: linear-gradient(270deg, var(--button-color), var(--primary-color));
     padding: 1rem;
     border-radius: .5rem;
-    color: white;
+    color: #fff;
 }
 #div2 {
     grid-area: 1 / 2 / 2 / 5;
     text-align: center;
+    font-size: max(2rem, 3vh); 
 }
 #div3 {
 	grid-area: 2/2/3/3;
@@ -216,6 +206,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .card {
@@ -242,24 +234,22 @@ body {
     max-height: 300px;
     border-radius: var(--border-radius-primary);
     object-fit: cover;
-    margin-bottom: 1rem;
 }
 
+.card__content {
+    max-width: 50%;
+    flex-grow: 1;
+}
 
-.card__date {
-    display: block;
-    font-size: var(--font-size-caption);
-    line-height: var(--line-height-caption);
-    text-transform: uppercase;
-    color: var(--color-text);
-    margin-bottom: 6px;
+.card__content > p {
+    margin-top: 20px;
 }
 
 .card__title {
     font-size: var(--font-size-title);
     line-height: var(--line-height-title);
     color: var(--color-text);
-    background-image: linear-gradient(90deg, var(--light-blue), var(--blue));
+    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     background-size: 0;
     background-repeat: no-repeat;
     background-position: 0 85%;
@@ -308,37 +298,55 @@ body {
     }
 }
 
+/* BREAKPOINT */
 
+@media screen and (max-width: 1000px) {
+    .health-network {
+        display: grid;
+        grid-template-rows: .4fr repeat(3, 1fr);
+        grid-template-columns: minmax(200px, 2fr) repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .text-preview {
+        height: 55vh;
+    }
+
+    #div1 {grid-area: 1 / 1 / 5 / 2;}
+    #div2 {grid-area: 1 / 2 / 2 / 4;}
+    #div3 {grid-area: 2/2/3/3;}
+    #div4 {grid-area: 2/3/3/4;}
+    #div5 {grid-area: 3/2/4/3;}
+    #div6 {grid-area: 3/3/4/4;}
+    #div7 {grid-area: 4/2/5/3;}
+    #div8 {grid-area: 4/3/5/4;}
+
+}
 
 @media (max-width: 768px) {
     .health-network {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust grid on smaller screens */
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     .grid-item {
-        font-size: 0.9rem; /* Reduce font size on smaller screens */
-        padding: 0.3rem; /* Less padding */
+        padding: 1rem;
+    }
+
+    #div1 {
+        display: none;
     }
 
     .card {
         display: flex;
         flex-direction: column;
     }
+
+    .card__content {
+        max-width: 100%;
+        text-wrap: wrap;
+    }
 }
 
 @media (max-width: 480px) {
-    .health-network {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem; /* Add some gap between items */
-    }
 
-    .grid-item {
-        font-size: 0.8rem; /* Further reduce font size for very small screens */
-        padding: 0.2rem; /* Minimal padding */
-    }
-
-    #div1 {
-        padding: 0.8rem; /* Adjust text-preview padding */
-    }
 }

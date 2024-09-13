@@ -10,77 +10,56 @@ body {
     color: #fff;
 }
 
-.head-wrap {
-    position: relative;
-    height: 30vh;
-    background-color: #00A2E1;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.head-wrap h1 {
-    margin-top: 10vh;
-    margin-left: 5rem;
-    font-size: 3rem;
-
-}
-
-.intro {
-    margin: 2rem 5%;
-    color: #2f4f4f;
-}
-
 .container {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    overflow: hidden;
 }
 
-.row {
+.service-row {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
 }
 
 .card {
-    height: 70vh;
-    display: grid;
-    grid-template-columns: 27vw;
-    grid-template-rows: 40% 40% 20%;
-    grid-template-areas: "image" "text" "stats" ;
-    margin: 0 2rem;
-
+     flex: 1 1 calc(33.333% - 2rem); /*will take up 1/3 of row minus pad */
+    background-color: #fff;
     border-radius: 1rem;
-    background: #fff;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-    text-align: center;
-
-    transition: 0.5s ease;
-    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 400px; 
 }
 
 .card-image {
-    grid-area: image;
+    height: 150px;
     background-image: url("/Images/img3.jpg");
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    background-size: cover;
+    object-fit: cover;
 }
+
+.card-title {
+    margin-top: 10px;
+    color: #234;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
 .card-text {
-    grid-area: text;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.card-text .date {
-    color: #ff076e;
-    font-size: 1rem;
 }
 
 .card-text p {
@@ -88,17 +67,42 @@ body {
     font-size: 1rem;
 }
 
-.card-text h2 {
-    height: 40%;
-    margin-top: 0px;
-    color: black;
-}
-
-.card-stats {
-    grid-area: stats;
-}
-
 .card:hover {
     transform: scale(1.2);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.registration {
+    width: 100%;
+    background-color: #00A2E1;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.registration h2, p {
+    padding: 1rem 0;
+}
+
+.registration h2 {
+    font-size: 2em;
+}
+
+.registration .cta {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem); /* Two cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(100% - 1rem); /* one column */
+    }
 }

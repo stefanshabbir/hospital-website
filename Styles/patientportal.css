@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif; 
+}
+
+:root {
+    --blue: #005F8D;
 }
 
 .hero-img {
-    background: url('../Images/senior-man-sitting-wheelchair-doctor.jpg') no-repeat;
+    background: url('../Images/senior-man-sitting-wheelchair-doctor.webp') no-repeat;
     background-size: cover;
     background-position: top center;
-    height: 100vb;
+    height: 100dvb;
 
     /* filter: blur(1px);
     -webkit-filter: blur(1px); */
@@ -27,7 +28,7 @@
     align-items: center;
     justify-content: space-around;
     gap: clamp(2rem, 5vw, 3rem);
-    color: aliceblue;
+    color: #fff;
     margin: 0 auto;
 }
 
@@ -36,7 +37,8 @@
 }
 
 .hero .left {
-    background-color: rgba(165, 42, 42, 0.288);
+    background-color: #56575738;
+    backdrop-filter: blur(50px);
     border-radius: .6rem;
     padding: .7rem;
 }
@@ -47,18 +49,64 @@
 
 .hero .title {
     margin-bottom: 1rem;
-    line-height: clamp(3rem, 5vw, 3.5rem);
+    line-height: 1.1;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: justify;
+.hero .em-title {
+    animation: TitleFadeIn 2s linear forwards;
+}
+
+.hero h1 .highlight {
+    background-image: linear-gradient(#005F8D, #005F8D);
+    background-size: 0 50%;
+    background-repeat: no-repeat;
+    padding: 0 4px;
+    animation: underline 1s linear 2.4s forwards;
+}
+
+.hero .highlight {
+    background-image: linear-gradient(#005F8D, #005F8D);
+    background-size: 0 80%;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 0 4px;
+    animation: underline 2s linear 3.4s forwards;
+}
+
+@keyframes underline {
+    0% {
+        background-size: 0% 80%;
+    }
+
+    50% {
+        background-size: 50% 80%;
+    }
+
+    100% {
+        background-size: 100% 80%;
+    }
+}
+
+@keyframes TitleFadeIn {
+    0% {   
+    color: #fff;
+    }
+    100% {   
+    color: #005F8D;
+    }
+}
+
+
+.hero p, #tagline {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .cta-button {
     padding: 0.8rem 2rem;
-    background-color: turquoise;
+    text-wrap: nowrap;
+    background-color: #005F8D;
     color: white;
     text-decoration: none;
     font-size: clamp(1.5rem, 3vw, 1.8rem);
@@ -66,27 +114,12 @@
 }
 
 .cta-button:hover {
-    background-color: var(--light-blue);
-}
-
-.cta-button:hover + .hero-img {
-    filter: blur(6px);
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(4px);
-    z-index: -1; /* Make sure the overlay stays behind the text */
+    background-color: #00A2E1;
 }
 
 @media screen and (max-width:768px) {
     .hero-img {
-        background: url('../Images/senior-man-sitting-wheelchair-doctor1.jpg') no-repeat;
+        background: url('../Images/senior-man-sitting-wheelchair-doctor-mobile.webp') no-repeat;
         background-size: cover;
         background-position: center;
     }
