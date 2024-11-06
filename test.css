@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.drug-class {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.drug-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: .5rem 0 .5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    transition: .5s ease;
+}
+
+.drug-name h3 {
+    padding-left: 1rem;
+}
+
+.card-image {
+    height: 150px;
+    background-image: url("/Images/img3.jpg");
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    object-fit: cover;
+}
+
+.input-field {
+    width: 50px;
+    height: 35px;
+    border: 1px solid #c9c9c9; 
+    border-radius: 9px;       
+    padding: 5px;              
+    text-align: center;        
+    font-size: 16px;           
+    outline: none;             
+    box-sizing: border-box;
+}
+
+.qty-purchase-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: .3rem 1rem 0;
+}
+
+.qty-purchase-wrapper label {
+    padding-right: .4rem;
+    line-height: 1.2em;
+    text-align: center;
+    color: rgb(65, 65, 65);
+}
+
+.input-field:focus {
+    border-color: #5ba1d0;
+}
+
+input[type=number] { 
+    appearance: textfield;
+    -moz-appearance: textfield;
+    margin: 0; 
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+.arrow-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-right: 1rem;
+
+    background-color: #5ba1d0;
+    border-radius: 4px;
+    
+}
+
+.arrow-wrapper button {
+    height: calc(35px/2);
+    padding: 1px 6px;
+
+    background-color: #5ba1d0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart {
+    background-color: #5ba1d0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #757575c2;
+}
