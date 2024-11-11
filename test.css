@@ -103,6 +103,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .add-to-cart {
+    height: 35px;
     background-color: #5ba1d0;
     color: #fff;
     cursor: pointer;
@@ -114,4 +115,73 @@ input[type=number]::-webkit-outer-spin-button {
 
 .add-to-cart:hover {
     background-color: #757575c2;
+}
+
+/* Basic table styling */
+#cartTable {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Table header styling */
+#cartTable thead {
+    background-color: #4CAF50; /* Green header background */
+    color: white;
+    text-align: left;
+}
+
+#cartTable th, #cartTable td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Alternating row colors for tbody */
+#cartTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light gray */
+}
+
+#cartTable tbody tr:nth-child(even) {
+    background-color: #e0f7e0; /* Light green */
+}
+
+/* Highlight row on hover */
+#cartTable tbody tr:hover {
+    background-color: #d1ffd1;
+}
+
+/* Optional styling for cells */
+#cartTable th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#cartTable td {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+    #cartTable {
+        font-size: 14px;
+    }
+}
+
+#cartTable .remove-button {
+    cursor: pointer;
+    height: 35px;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
 }

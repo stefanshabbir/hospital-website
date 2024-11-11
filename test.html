@@ -56,12 +56,12 @@
         <div class="drug-class">
             <div class="drug-card">
                 <div class="drug-name">
-                    <h3>Test Drug</h3>
+                    <h3>Paracetamol</h3>
                 </div>
                 <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
                 <div class="qty-purchase-wrapper">
                     <label for="quantityInput">Quantity</label>
-                    <input type="number" class="input-field quantityInput" min="1" max="100" value="0">
+                    <input type="number" class="input-field quantityInput" min="1" max="100" value="0" pattern="^[1-9]\d*$">
                     <div class="arrow-wrapper">
                         <button class="increase-btn">+</button>  
                         <button class="decrease-btn">-</button>
@@ -71,12 +71,12 @@
             </div>
             <div class="drug-card">
                 <div class="drug-name">
-                    <h3>Test Drug</h3>
+                    <h3>Aspirin</h3>
                 </div>
                 <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
                 <div class="qty-purchase-wrapper">
                     <label for="quantityInput">Quantity</label>
-                    <input type="number" class="input-field quantityInput" min="1" max="100" value="0">
+                    <input type="number" class="input-field quantityInput" min="1" max="100" value="0" step="1" title="Please enter a positive whole number" >
                     <div class="arrow-wrapper">
                         <button class="increase-btn">+</button>  
                         <button class="decrease-btn">-</button>
@@ -86,7 +86,7 @@
             </div>
             <div class="drug-card">
                 <div class="drug-name">
-                    <h3>Test Drug</h3>
+                    <h3>Codeine</h3>
                 </div>
                 <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
                 <div class="qty-purchase-wrapper">
@@ -100,6 +100,23 @@
                 </div>
             </div>
         </div>
+
+        <!-- Cart Table  -->
+         <section class="cart-display">
+            <h2>Items In Cart</h2>
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Drug Name</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+         </section>
     </main>
 </body>
 <script src="./Scripts/script.js"></script>
