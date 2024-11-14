@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h2>Calculate Volume of Cylinder! </h2>
+        <p>Enter a number: </p>
+        <input type="number" id="numInput1" placeholder="Radius">
+        <input type="number" id="numInput2" placeholder="Height">
+        <button id="submitBtn">Enter</button>
+        <p id="result"></p>
+    </main>
+    <script defer>
+        let numInput = document.getElementById("numInput");
+        let result = document.getElementById("result");
+        
+        numChecker = (num) => {
+            if (parseInt(numInput.value) % 2 === 0) {
+                result.textContent = "Even"
+            } else {
+                result.textContent = "Odd"
+            }
+        }
+
+        dayChecker = (day) => {
+            lDay = day.toLowerCase();
+            return (lDay.charAt(0).toUpperCase() + lDay.slice(1));
+        }
+
+        let submitBtn1 = document.getElementById("submitBtn");
+        submitBtn1.addEventListener("click", () => {
+            let numInput1 = document.getElementById("numInput1");
+            let numInput2 = document.getElementById("numInput2");
+            const vol = Math.PI * Math.pow(numInput1.value, 2) * numInput2.value;
+            result.textContent = vol.toFixed(2);
+        });
+        submitBtn.addEventListener("click", () => {
+            const day = dayChecker(numInput.value);
+
+            switch (day) {
+                case "Monday":
+                    result.innerText = "Monday";
+                    break;
+                case "Tuesday":
+                    result.innerText = "Tuesday";
+                    break;
+                case "Wednesday":
+                    result.innerText = "Wednesday";
+                    break;
+                case "Thursday":
+                    result.innerText = "Thursday";
+                    break;
+                case "Friday":
+                    result.innerText = "Friday";
+                    break;
+                case "Saturday":
+                    result.innerText = "Saturday";
+                    break;
+                case "Sunday":
+                    result.innerText = "Sunday";
+                    break;
+                default:
+                    result.innerText = "Error: Put a day"
+                    break;
+            }
+
+        
+        });
+    </script>
+</body>
+</html>

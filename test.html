@@ -55,13 +55,18 @@
         </section>
         <div class="drug-class">
             <div class="drug-card">
+                <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
                 <div class="drug-name">
                     <h3>Paracetamol</h3>
                 </div>
-                <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                <span class="drug-price-wrap">LKR <span id="drugPrice">500.00</span></span>
                 <div class="qty-purchase-wrapper">
                     <label for="quantityInput">Quantity</label>
-                    <input type="number" class="input-field quantityInput" min="1" max="100" value="0" pattern="^[1-9]\d*$">
+                    <div class="quantity-warning">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        Error: Please enter a valid value. 
+                    </div>
+                    <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                     <div class="arrow-wrapper">
                         <button class="increase-btn">+</button>  
                         <button class="decrease-btn">-</button>
@@ -70,13 +75,18 @@
                 </div>
             </div>
             <div class="drug-card">
+                <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
                 <div class="drug-name">
                     <h3>Aspirin</h3>
                 </div>
-                <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                <span class="drug-price-wrap">LKR <span id="drugPrice">200.00</span></span>
                 <div class="qty-purchase-wrapper">
                     <label for="quantityInput">Quantity</label>
-                    <input type="number" class="input-field quantityInput" min="1" max="100" value="0" step="1" title="Please enter a positive whole number" >
+                    <div class="quantity-warning">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        Error: Please enter a valid value. 
+                    </div>
+                    <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                     <div class="arrow-wrapper">
                         <button class="increase-btn">+</button>  
                         <button class="decrease-btn">-</button>
@@ -85,13 +95,18 @@
                 </div>
             </div>
             <div class="drug-card">
-                <div class="drug-name">
-                    <h3>Codeine</h3>
-                </div>
                 <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                <div class="drug-name">
+                    <h3>Vitamins</h3>
+                </div>
+                <span class="drug-price-wrap">LKR <span id="drugPrice">1000.00</span></span>
                 <div class="qty-purchase-wrapper">
                     <label for="quantityInput">Quantity</label>
-                    <input type="number" class="input-field quantityInput" min="1" max="100" value="0">
+                    <div class="quantity-warning">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        Error: Please enter a valid value. 
+                    </div>
+                    <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                     <div class="arrow-wrapper">
                         <button class="increase-btn">+</button>  
                         <button class="decrease-btn">-</button>
@@ -100,6 +115,7 @@
                 </div>
             </div>
         </div>
+        
 
         <!-- Cart Table  -->
          <section class="cart-display">
@@ -109,6 +125,7 @@
                     <tr>
                         <th>Drug Name</th>
                         <th>Quantity</th>
+                        <th>Price</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

@@ -1,66 +1,3 @@
-// function increase() {
-//     let number = document.getElementById("quantityInput");
-//     number.value = parseInt(number.value) + 1;
-// }
-
-// function decrease() {
-//     let number = document.getElementById("quantityInput");
-//     if (parseInt(number.value) > 0) {
-//         number.value = parseInt(number.value) - 1;
-//     }
-// }
-
-// function validateQuantity(input) {
-//     if (isNaN(input.value)) {
-//         input.value = 0;
-//     } else if (input.value < 0) { 
-//         input.value = 0;
-//     }
-// }
-
-// function updateQuantity(action, input) {
-//     let currentValue = parseInt(input.value);
-
-//     if (isNaN(input.value)) {
-//         input.value = 0;
-//     }
-
-//     if (action === 'increase') {
-//         input.value = currentValue < 1 ? 1 : currentValue + 1;
-//     }
-//     else if (action === 'decrease' && currentValue > 0) {
-//         input.value = currentValue - 1;
-//     }
-
-//     if (isNaN(currentValue)) {
-//         currentValue = 0;
-//     }
-
-//     updateQuantityColor();
-// }
-
-// function updateQuantityColor(input) {
-//     // input.style.color = parseInt(number.value) === 0 ? "white" : "#000";
-// }
-
-// document.querySelectorAll(".drug-card").forEach(card => {
-//     const input = card.querySelector(".quantityInput");
-//     const increaseButton = card.querySelector(".increase-btn");
-//     const decreaseButton = card.querySelector(".decrease-btn");
-
-//     increaseButton.addEventListener("click", () => updateQuantity("increase", input));
-//     decreaseButton.addEventListener("click", () => updateQuantity("decrease", input));
-//     input.addEventListener("input", () => validateQuantity(input));
-// })
-
-// function addToCart() {
-//     const quantity = parseInt(input.value) {
-//         if (quantity > 0) {
-//             Cart.addItems({name: this.document.querySelector(".drug-name h3").textContent, quantity});
-//         }
-//     }
-// }
-
 class DrugCard {
     constructor(element) {
         this.element = element;
@@ -69,7 +6,7 @@ class DrugCard {
         this.decreaseButton = element.querySelector(".decrease-btn");
         this.addToCartButton = element.querySelector(".add-to-cart");
 
-        this.min = parseInt(this.input.getAttribute("min")) || 1;
+        this.min = parseInt(this.input.getAttribute("min")) || 0;
         this.max = parseInt(this.input.getAttribute("max")) || 100;
 
         this.initialize();
@@ -84,7 +21,12 @@ class DrugCard {
     updateQuantity(action) {
         let currentValue = parseInt(this.input.value);
     
-        if (action === 'increase') {
+        if (currentValue > 100) {
+            const quantityWarning = document.querySelector(".quantity-warning");
+            quantityWarning.style.display = "block";
+        }
+
+        if (action === 'increase' && currentValue < 100) {
             this.input.value = Math.min(currentValue + 1, this.max)
         }
         else if (action === 'decrease' && currentValue > 0) {
@@ -93,12 +35,18 @@ class DrugCard {
     }
 
     addToCart() {
-        const quantity = parseInt(this.input.value);
+        const quantity = parseFloat(this.input.value);
+        const quantityWarning = this.element.querySelector(".quantity-warning");
+        const decimalCheck = quantity % 1;
 
-        if (quantity > 0) {
+        if (quantity > 0 && quantity < 100 && decimalCheck === 0) {
             const drugName = this.element.querySelector(".drug-name h3").textContent;
-            Cart.addItems({name: drugName, quantity});
-            console.log(`${quantity} item(s) of ${drugName} added to cart.`);
+            const drugPrice = parseFloat(this.element.querySelector("#drugPrice").textContent);
+            Cart.addItems({name: drugName, quantity, price: drugPrice});
+            console.log(`${quantity} item(s) of ${drugName} added to cart for ${drugPrice}`);
+        } else {
+            quantityWarning.style.display = "block";
+            this.input.value = 0;
         }
     }
 }
@@ -115,6 +63,7 @@ class Cart {
         }
         this.updateCartTable();
     }
+
     static getItems() {
         return this.items;
     }
@@ -126,7 +75,16 @@ class Cart {
 
     static updateCartTable() {
         const tableBody = document.getElementById("cartTable").querySelector("tbody");
+        const cartTable = document.querySelector(".cart-display");
         tableBody.innerHTML = "";
+
+        if (this.items.length === 0) {
+            cartTable.style.display = "none";
+        } else {
+            cartTable.style.display = 'block';
+        }
+
+        let cartTotal = 0;
 
         this.items.forEach(item => {
             const row = document.createElement("tr");
@@ -139,6 +97,12 @@ class Cart {
             quantityCell.textContent = item.quantity;
             row.appendChild(quantityCell);
 
+            const priceCell = document.createElement("td");
+            const itemPrice = this.calculateTotalPrice();
+            priceCell.textContent = "LKR " + itemPrice;
+            cartTotal += itemPrice;
+            row.appendChild(priceCell);
+
             const actionCell = document.createElement("td");
             const removeButton = document.createElement("button");
             removeButton.setAttribute("class", "remove-button");
@@ -149,7 +113,35 @@ class Cart {
 
             tableBody.appendChild(row);
         });
+
+        const totalCartRow = document.createElement("tr");
+        totalCartRow.setAttribute("class", "cart-total-row");
+        
+        const totalLabelCell = document.createElement("td");
+        totalLabelCell.textContent = "Total";
+        
+        const totalValueCell = document.createElement("td");
+        totalValueCell.textContent = "LKR " + cartTotal;
+        
+        const emptyCell1 = document.createElement("td");
+        const emptyCell2 = document.createElement("td");
+
+        totalCartRow.appendChild(totalLabelCell);
+        totalCartRow.appendChild(emptyCell1);
+        totalCartRow.appendChild(emptyCell2);
+        totalCartRow.appendChild(totalValueCell);
+
+        tableBody.appendChild(totalCartRow);
     }
+
+    static calculateTotalPrice() {
+        return this.items.reduce((total, item) => total + item.price * item.quantity, 0)
+    }
+
+    static calculateCartPrice() {}
+
+    static displayCartPrice() {}
+
     static checkout() {
         console.log("checking out");
     }

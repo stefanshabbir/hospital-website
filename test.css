@@ -15,7 +15,7 @@
     background-color: #fff;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: .5rem 0 .5rem;
+    padding-bottom: .5rem;
 
     display: flex;
     flex-direction: column;
@@ -25,7 +25,18 @@
 }
 
 .drug-name h3 {
-    padding-left: 1rem;
+    color: #333;
+    font-weight: 650;
+    text-align: center;
+    padding: 10px 0 0;
+}
+
+.drug-card .drug-price-wrap {
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0 8px;
 }
 
 .card-image {
@@ -52,6 +63,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     padding: .3rem 1rem 0;
 }
@@ -64,6 +76,15 @@
 }
 
 .input-field:focus {
+    border-color: #5ba1d0;
+}
+
+.input-field:user-invalid {
+    border-color: indianred;
+    border-width: 2px;
+}
+
+.input-field:user-valid {
     border-color: #5ba1d0;
 }
 
@@ -117,7 +138,10 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #757575c2;
 }
 
-/* Basic table styling */
+.cart-display {
+    display: none;
+}
+
 #cartTable {
     width: 100%;
     max-width: 600px;
@@ -185,3 +209,30 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 8px 20px;
     transition: all 0.3s ease;
 }
+
+.quantity-warning {
+    position: absolute;
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 10px;
+    z-index: 10;
+    display: none;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
