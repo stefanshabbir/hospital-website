@@ -142,7 +142,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
 }
 
-#cartTable {
+#cartTable, #checkoutTable {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
@@ -154,7 +154,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Table header styling */
-#cartTable thead {
+#cartTable thead, #checkoutTable thead {
     background-color: #4CAF50; /* Green header background */
     color: white;
     text-align: left;

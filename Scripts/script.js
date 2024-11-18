@@ -61,6 +61,7 @@ class Cart {
         } else {
             this.items.push(item);
         }
+        this.saveToSessionStorage();
         this.updateCartTable();
     }
 
@@ -98,7 +99,7 @@ class Cart {
             row.appendChild(quantityCell);
 
             const priceCell = document.createElement("td");
-            const itemPrice = this.calculateTotalPrice();
+            const itemPrice = item.price * item.quantity;
             priceCell.textContent = "LKR " + itemPrice;
             cartTotal += itemPrice;
             row.appendChild(priceCell);
@@ -130,7 +131,7 @@ class Cart {
         const checkoutButton = document.createElement("button");
         checkoutButton.setAttribute("class", "checkout-button");
         checkoutButton.textContent = "Proceed To Checkout";
-        checkoutButton.addEventListener("click", this.checkout);
+        checkoutButton.addEventListener("click", () => Cart.checkout());
         actionCell.appendChild(checkoutButton);
 
         totalCartRow.appendChild(totalLabelCell);
@@ -141,18 +142,68 @@ class Cart {
         tableBody.appendChild(totalCartRow);
     }
 
-    static calculateTotalPrice() {
-        return this.items.reduce((total, item) => total + item.price * item.quantity, 0)
+    static saveToSessionStorage() {
+        sessionStorage.setItem("cartItems", JSON.stringify(this.items));
     }
 
-    static calculateCartPrice() {}
+    static loadFromSessionStorage() {
+        const savedItems = sessionStorage.getItem("cartItems");
+        if (savedItems) {
+            this.items = JSON.parse(savedItems);
+        }
+    }
 
-    static displayCartPrice() {}
+    static populateCheckoutTable() {
+        const tableBody = document.querySelector("#checkoutTable tbody");
+        let cartTotal = 0;
+
+        this.items.forEach(item => {
+            const row = document.createElement("tr");
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = item.name;
+            row.appendChild(nameCell);
+
+            const quantityCell = document.createElement("td");
+            quantityCell.textContent = item.quantity;
+            row.appendChild(quantityCell);
+
+            const priceCell = document.createElement("td");
+            const itemPrice = item.price * item.quantity;
+            priceCell.textContent = "LKR " + itemPrice.toFixed(2);
+            cartTotal += itemPrice;
+            row.appendChild(priceCell);
+
+            tableBody.appendChild(row);
+        });
+
+        const totalRow = document.createElement("tr");
+        totalRow.innerHTML = `<td colspan="2" style="font-weight:bold;">Total</td><td>LKR ${cartTotal.toFixed(2)}</td>`;
+        tableBody.appendChild(totalRow);
+    }    
 
     static checkout() {
         console.log("checking out");
+        this.saveToSessionStorage();
+        window.location.href = "/checkout.html";
+    }
+
+    static favoriteCart() {
+        const savedItems = sessionStorage.getItem("cartItems");
+        if (savedItems) {
+            localStorage.setItem("cartItems", JSON.stringify(savedItems));
+        }
     }
 }
 
-document.querySelectorAll(".drug-card").forEach(card => new DrugCard(card));
+document.querySelectorAll(".drug-card").forEach(card => new DrugCard(card))
+
+if (window.location.href.includes("/checkout.html")) {
+    console.log("hello");
+    Cart.loadFromSessionStorage();
+    Cart.populateCheckoutTable();
+}
+
+
+
 
