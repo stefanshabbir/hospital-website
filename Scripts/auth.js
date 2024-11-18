@@ -1,17 +1,9 @@
-class Auth {
-    constructor() {
-        const auth = localStorage.getItem("auth");
-        this.validateAuth(auth);
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const loginButton = document.querySelector('.cta');
 
-    validateAuth(auth) {
-        if (auth != 1) {
-            window.location.replace("/patientForm")
-        }
+    if (loggedInUser && loginButton) {
+        loginButton.innerHTML = loggedInUser; // Remove the login/register button if the user is logged in
     }
+});
 
-    logOut() {
-        localStorage.removeItem("auth");
-        window.location.replace("/patientForm");
-    }
-}

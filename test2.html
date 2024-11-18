@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Cards</title>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="card-container" class="card-container"></div>
+
+<script>
+    // List of medicines and their doses
+    const medicines = [
+        { name: 'Paracetamol', dose: '500 mg every 4-6 hours' },
+        { name: 'Ibuprofen', dose: '200-400 mg every 4-6 hours' },
+        { name: 'Aspirin', dose: '325-650 mg every 4 hours' },
+        { name: 'Amoxicillin', dose: '500 mg every 8 hours' },
+        { name: 'Ciprofloxacin', dose: '250-500 mg every 12 hours' },
+        { name: 'Fluoxetine', dose: '20 mg daily' }
+    ];
+
+    // Function to generate a card for each medicine
+    function generateCards() {
+        const container = document.getElementById('card-container');
+        
+        medicines.forEach(medicine => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <h3>${medicine.name}</h3>
+                <p><strong>Dose:</strong> ${medicine.dose}</p>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // Call the function to generate the cards when the page loads
+    generateCards();
+</script>
+
+</body>
+</html>

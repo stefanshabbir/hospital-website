@@ -1,75 +1,148 @@
-class Login {
-    constructor(form, fields) {
-        this.form = form;
-        this.fields = fields;
-        this.validateOnSubmit();
+// document.addEventListener("DOMContentLoaded", () => {
+//     const registerForm = document.querySelector(".registerForm");
+//     const loginForm = document.querySelector(".loginForm");
+
+//     registerForm.addEventListener("submit", (e) => {
+//         const name = registerForm.name.value;
+//         const birthday = registerForm.birthday.value;
+//         const sex = registerForm.sex.value;
+//         const email = registerForm.email.value;
+//         const phoneNumber = registerForm.phoneNumber.value;
+//         const address = registerForm.address.value;
+//         const province = registerForm.province.value;
+//         const postalCode = registerForm["postal-code"].value;
+//         const username = registerForm.uname.value;
+//         const password = registerForm.password.value;
+
+//         if (localStorage.getItem(username)) {
+//             alert("Username already exists");
+//             return;
+//         }
+
+//         const userData = {
+//             name,
+//             birthday,
+//             sex,
+//             email,
+//             phoneNumber,
+//             address,
+//             province,
+//             postalCode,
+//             password // Store password with the username
+//         };
+
+//         localStorage.setItem(username, JSON.stringify(userData));
+//         alert("Registration successful!");
+
+//         // Clear form after successful registration
+//         registerForm.reset();
+//     });
+
+//     loginForm.addEventListener("submit", (e) => {
+//         e.preventDefault();
+
+//         const username = loginForm.uname.value;
+//         const password = loginForm.password.value;
+
+//         const storedUserData = localStorage.getItem(username);
+//         console.log(storedUserData);
+
+//         if (!storedUserData) {
+//             alert("User does not exist");
+//             return;
+//         }
+
+//         const userData = JSON.parse(storedUserData);
+
+//         if (userData.password === password) {
+//             alert("login success");
+//             return;
+//         } else {
+//             alert("incorrect password");
+//         }
+
+//         loginForm.reset();
+//     }, { once: true})
+// })
+
+class AuthManager {
+    constructor(registerFormSelector, loginFormSelector) {
+        this.registerForm = document.querySelector(registerFormSelector);
+        this.loginForm = document.querySelector(loginFormSelector);
+        this.loggedInUser = localStorage.getItem('loggedInUser');
+        this.init();
     }
 
-    validateOnSubmit() {
-        let self = this;
-
-        this.form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            var error = 0;
-            self.fields.forEach(field => {
-                const input = document.querySelector(`#${field}`);
-                if (self.validateFields(input) === false) {
-                    error++;
-                }
-            });
-            if (error === 0) {
-                localStorage.setItem("auth", 1);
-                this.form.submit();
-            }
-        })
+    init() {
+        this.registerForm.addEventListener("submit", (e) => this.handleRegister(e));
+        this.loginForm.addEventListener("submit", (e) => this.handleLogin(e));
     }
-    
-    validateFields(field) {
-        if (field.value.trim() === "") {
-            this.setStatus(
-                field,
-                `${field.previousElementSibling.innerText} cannot be blank`,
-                "error"
-            );
-            return false;
+
+    handleRegister(e) {
+        e.preventDefault();
+
+        const name = this.registerForm.name.value;
+        const birthday = this.registerForm.birthday.value;
+        const sex = this.registerForm.sex.value;
+        const email = this.registerForm.email.value;
+        const phoneNumber = this.registerForm.phoneNumber.value;
+        const address = this.registerForm.address.value;
+        const province = this.registerForm.province.value;
+        const postalCode = this.registerForm["postal-code"].value;
+        const username = this.registerForm.uname.value;
+        const password = this.registerForm.password.value;
+
+        if (localStorage.getItem(username)) {
+            alert("Username already exists");
+            return;
+        }
+
+        const userData = {
+            name,
+            birthday,
+            sex,
+            email,
+            phoneNumber,
+            address,
+            province,
+            postalCode,
+            password // Store password with the username
+        };
+
+        localStorage.setItem(username, JSON.stringify(userData));
+        alert("Registration successful!");
+        localStorage.setItem('loggedInUser', username);
+        this.registerForm.reset();
+    }
+
+    handleLogin(e) {
+        e.preventDefault();
+
+        const username = this.loginForm.uname.value;
+        const password = this.loginForm.password.value;
+
+        const storedUserData = localStorage.getItem(username);
+        console.log(storedUserData);
+
+        if (!storedUserData) {
+            alert("User does not exist");
+            return;
+        }
+
+        const userData = JSON.parse(storedUserData);
+
+        if (userData.password === password) {
+            alert("login success");
+            localStorage.setItem('loggedInUser', username);
+            window.location.reload();
         } else {
-            if (field.type === "password") {
-                if (field.value.length < 8) {
-                    this.setStatus(
-                        field,
-                        `${field.previousElementSibling.innerText} must be atleast 8 characters`,
-                        "error"
-                    );
-                    return false;
-                } else {
-                    this.setStatus(field, null, "success");
-                    return true;
-                }
-            } else {
-                this.setStatus(field, null, "success");
-                return true;
-                }
-            }
+            alert("incorrect password");
         }
-    setStatus() {
-        const errorMessage = field.parentElement.querySelector(".error-message");
 
-        if (status == "success") {
-            if(errorMessage) {
-                errorMessage.innerText = "";
-            }
-            field.classList.remove("input-error");
-        }
-        if (status == "error") {
-            errorMessage.innerText = message;
-            field.classList.add("input-error");
-        }
+        this.loginForm.reset();
     }
-
-    }
-
-const form = document.querySelector(".loginForm");
-if (form) {
-    const fields = ["username", "password"];
-    const validator = new Login(form, fields);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    new AuthManager(".registerForm", ".loginForm");
+});

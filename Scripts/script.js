@@ -119,17 +119,24 @@ class Cart {
         
         const totalLabelCell = document.createElement("td");
         totalLabelCell.textContent = "Total";
+        totalLabelCell.style.fontWeight = "bolder";
         
         const totalValueCell = document.createElement("td");
         totalValueCell.textContent = "LKR " + cartTotal;
         
         const emptyCell1 = document.createElement("td");
-        const emptyCell2 = document.createElement("td");
+
+        const actionCell = document.createElement("td");
+        const checkoutButton = document.createElement("button");
+        checkoutButton.setAttribute("class", "checkout-button");
+        checkoutButton.textContent = "Proceed To Checkout";
+        checkoutButton.addEventListener("click", this.checkout);
+        actionCell.appendChild(checkoutButton);
 
         totalCartRow.appendChild(totalLabelCell);
         totalCartRow.appendChild(emptyCell1);
-        totalCartRow.appendChild(emptyCell2);
         totalCartRow.appendChild(totalValueCell);
+        totalCartRow.appendChild(actionCell);
 
         tableBody.appendChild(totalCartRow);
     }
@@ -148,3 +155,4 @@ class Cart {
 }
 
 document.querySelectorAll(".drug-card").forEach(card => new DrugCard(card));
+
