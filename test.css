@@ -138,6 +138,10 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #757575c2;
 }
 
+section h2 {
+    text-align: center;
+}
+
 .cart-display {
     display: none;
 }
@@ -247,3 +251,26 @@ input[type=number]::-webkit-outer-spin-button {
   .closebtn:hover {
     color: black;
   }
+
+  .popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+.popup.visible {
+    display: block;
+}
+
+.popup:hover {
+    background-color: #f5c6cb;
+}
