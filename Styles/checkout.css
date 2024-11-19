@@ -86,3 +86,31 @@ main {
       margin-bottom: 20px;
     }
   }
+
+.tab-container .tab-button {
+  width: 45%;
+  margin: 0;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  }
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.tab {
+  width: 100%;
+  padding: 20px;
+  order: 1;
+  display: none;
+  }
+
+.tab-container input[type='radio']:checked + label + .tab {
+  display: block;
+}

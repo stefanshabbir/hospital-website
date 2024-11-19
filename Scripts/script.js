@@ -173,7 +173,7 @@ class Cart {
     static checkout() {
         console.log("checking out");
         this.saveToSessionStorage();
-        window.location.href = "/checkout.html";
+        window.location.href = "./checkout.html";
     }
 
     static updateCartTable() {
@@ -300,3 +300,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+const applyFavorites = document.getElementById("applyFavouritesBtn");
