@@ -21,9 +21,11 @@ class DrugCard {
     updateQuantity(action) {
         let currentValue = parseInt(this.input.value);
     
-        if (currentValue > 100) {
+        if (currentValue > this.max) {
             const quantityWarning = document.querySelector(".quantity-warning");
-            quantityWarning.style.display = "block";
+            if (quantityWarning) {
+                ErrorMessageHandler.showError();
+            }
         }
 
         if (action === 'increase' && currentValue < 100) {
@@ -35,7 +37,7 @@ class DrugCard {
     }
 
     addToCart() {
-        const quantity = parseFloat(this.input.value);
+        const quantity = parseFloat(this.input.value) || 0;
         const quantityWarning = this.element.querySelector(".quantity-warning");
         const decimalCheck = quantity % 1;
 
@@ -63,15 +65,13 @@ class Cart {
         } else {
             this.items.push(item);
         }
-        this.saveToSessionStorage();
-        this.updateCartTable();
-        this.updatePopup();
+        this.saveToSessionStorage("cartItems", this.items);
+        this.refreshCartUI();
     }
 
     static removeItem(name) {
         this.items = this.items.filter(item => item.name !== name);
-        this.updateCartTable();
-        this.updatePopup();
+        this.refreshCartUI();
     }
 
     static updatePopup() {
@@ -85,15 +85,21 @@ class Cart {
         }
     }
 
-    static saveToSessionStorage() {
-        sessionStorage.setItem("cartItems", JSON.stringify(this.items));
+    static saveToSessionStorage(key, data) {
+        sessionStorage.setItem(key, JSON.stringify(data));
     }
 
-    static loadFromSessionStorage() {
-        const savedItems = sessionStorage.getItem("cartItems");
+    static loadFromSessionStorage(key) {
+        const savedItems = sessionStorage.getItem(key);
         if (savedItems) {
             this.items = JSON.parse(savedItems);
         }
+    }
+
+    //Updates the entire Cart UI
+    static refreshCartUI() {
+        this.updateCartTable();
+        this.updatePopup();
     }
 
     static populateCheckoutCart() {
@@ -161,8 +167,6 @@ class Cart {
             row.appendChild(priceCell);
 
             tableBody.appendChild(row);
-
-
         });
 
         const totalRow = document.createElement("tr");
@@ -171,8 +175,7 @@ class Cart {
     }    
 
     static checkout() {
-        console.log("checking out");
-        this.saveToSessionStorage();
+        this.saveToSessionStorage("cartItems", this.items);
         window.location.href = "./checkout.html";
     }
 
@@ -247,31 +250,77 @@ class Cart {
     static favoriteCart() {
         const savedItems = sessionStorage.getItem("cartItems");
         if (savedItems) {
-            localStorage.setItem("cartItems", JSON.stringify(savedItems));
+            localStorage.setItem("cartItems", (savedItems));
         }
         alert("Success!");
+    }
+
+    static applyFavorites() {
+        const favoriteCart = localStorage.getItem("cartItems");
+        if (favoriteCart) {
+            const parsedFavorites = JSON.parse(favoriteCart);
+            parsedFavorites.forEach(item => Cart.addItems(item));
+            
+            document.getElementById("cartTable").scrollIntoView({ behavior: "smooth", block: "start" });
+    
+            Cart.refreshCartUI();
+        }
+    }
+}
+
+class ErrorMessageHandler {
+    constructor() {
+        this.initializeCloseButtons();
+    }
+
+    initializeCloseButtons() {
+        document.querySelectorAll(".closebtn").forEach(button => {
+            button.addEventListener("click", () => this.handleClose(button))
+        })
+    }
+
+    handleClose(button) {
+        const parentElement = button.parentElement;
+        if (parentElement) {
+            parentElement.style.display = "none";
         }
     }
 
+    static showError() {
+        const container = document.querySelector(".error-message-container");
+        if (container) {
+            container.style.display = "block";
+
+            setTimeout(() => (container.style.display = "none"), 5000);
+        }
+    }
+}
 
 document.querySelectorAll(".drug-card").forEach(card => new DrugCard(card))
 
-if (window.location.href.includes("/checkout.html")) {
-    console.log("hello");
-    Cart.loadFromSessionStorage();
-    Cart.populateCheckoutCart();
-}
-
-const favoriteCartButton = document.getElementById("favoriteCart")
-if (favoriteCartButton) {
-    favoriteCartButton.addEventListener("click", Cart.favoriteCart);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+    new ErrorMessageHandler();
+
+    if (window.location.href.includes("/checkout.html")) {
+        Cart.loadFromSessionStorage("cartItems");
+        Cart.populateCheckoutCart();
+    }
+
+    const applyFavoritesBtn = document.getElementById("applyFavouritesBtn");
+    if (applyFavoritesBtn) {
+        applyFavoritesBtn.addEventListener("click", Cart.applyFavorites);
+    }
+
+    const favoriteCartButton = document.getElementById("favoriteCart")
+    if (favoriteCartButton) {
+        favoriteCartButton.addEventListener("click", Cart.favoriteCart);
+    }
+
     const cartTable = document.getElementById("cartTable");
     const popup = document.createElement("div");
     popup.className = "popup";
     popup.textContent = "Your cart is at the bottom. Click here to view.";
+    document.body.appendChild(popup);
 
     
     popup.addEventListener("click", () => {
@@ -279,10 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
         popup.classList.remove("visible");
     });
     
-    document.body.appendChild(popup);
-
     Cart.popup = popup;
-
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
@@ -296,8 +342,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     observer.observe(cartTable);
-    Cart.updatePopup();
-});
-
-
-const applyFavorites = document.getElementById("applyFavouritesBtn");
+})

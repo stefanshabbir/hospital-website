@@ -3,10 +3,7 @@
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-  }
-
-main {
-    width: 100dvw;
+    padding: 5px 0;
   }
   
   .col-25 {
@@ -27,12 +24,30 @@ main {
   .col-25,
   .col-50,
   .col-75 {
-    padding: 0 16px;
+    padding: 0 20px;
+    /* margin: 0; */
   }
-  
+
+  .province,
+  .zip,
+  .exp-year,
+  .cvv {
+    padding: 0;
+  }
+
+  .province,
+  .exp-year {
+    padding-right: 10px;
+  }
+
+  .cvv,
+  .zip {
+    padding-left: 10px;
+  }
+
   .container {
     background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
+    padding: 5px 15px 15px 15px;
     border: 1px solid lightgrey;
     border-radius: 3px;
   }
@@ -50,26 +65,25 @@ main {
     display: block;
   }
   
-  .icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
-  }
-  
   .btn {
-    background-color: #04AA6D;
+    background-color: #5ba1d0;
     color: white;
     padding: 12px;
     margin: 10px 0;
     border: none;
     width: 100%;
-    border-radius: 3px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 17px;
+
+    transition: all 0.3s ease;
   }
   
   .btn:hover {
-    background-color: #45a049;
+    background-color: #457ea3;
+  }
+
+  .checkout {
+    font-size: 1.2rem;
   }
   
   span.price {
@@ -78,13 +92,14 @@ main {
   }
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-  @media (max-width: 600px) {
+  @media (max-width: 620px) {
     .row {
       flex-direction: column-reverse;
     }
     .col-25 {
       margin-bottom: 20px;
     }
+    
   }
 
 .tab-container .tab-button {
@@ -101,12 +116,10 @@ main {
   align-items: center;
   flex-wrap: wrap;
   max-width: 600px;
-  margin: 2rem auto;
 }
 
 .tab {
   width: 100%;
-  padding: 20px;
   order: 1;
   display: none;
   }
