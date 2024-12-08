@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="./Styles/test.css">
     <link rel="stylesheet" href="./Styles/components.css">
     <link rel="stylesheet" href="./Styles/checkout.css">
 </head>
@@ -19,13 +19,13 @@
                     <div class="col-50">
                       <h3>Billing Address</h3>
                       <label for="fname">Full Name</label>
-                      <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                      <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required>
                       <label for="email">Email</label>
-                      <input type="text" id="email" name="email" placeholder="john@example.com">
+                      <input type="text" id="email" name="email" placeholder="john@example.com" required>
                       <label for="adr">Address</label>
-                      <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                      <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required>
                       <label for="city">City</label>
-                      <input type="text" id="city" name="city" placeholder="Colombo">
+                      <input type="text" id="city" name="city" placeholder="Colombo" required>
           
                       <div class="payment-row">
                         <div class="col-50 province">
@@ -42,7 +42,7 @@
                     <div class="col-50">
                       <h3>Payment</h3>
                       <div class="tab-container">
-                        <input type="radio" id="cardPayment" name="tab-container">
+                        <input type="radio" id="cardPayment" name="tab-container" required>
                         <label for="cardPayment" class="tab-button">Pay By Card</label>
                         <div class="tab"> 
                           <label for="cname">Name on Card</label>
@@ -73,9 +73,9 @@
           
                   </div>
                   <label>
-                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                    <input type="checkbox" checked="checked" name="sameadrr"> Shipping address same as billing
                   </label>
-                  <input type="submit" value="Checkout" class="btn checkout" >
+                  <input type="submit" value="Pay" class="btn checkout" >
                 </form>
               </div>
             </div>
