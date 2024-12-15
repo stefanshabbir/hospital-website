@@ -47,7 +47,7 @@ class DrugCard {
             Cart.addItems({name: drugName, quantity, price: drugPrice});
             console.log(`${quantity} item(s) of ${drugName} added to cart for ${drugPrice}`);
         } else {
-            quantityWarning.style.display = "block";
+            ErrorMessageHandler.showError();
             this.input.value = 0;
         }
     }
@@ -81,7 +81,6 @@ class Cart {
             console.log("success");
         } else {
             this.popup.classList.remove("visible");
-            console.log("test");
         }
     }
 
@@ -290,6 +289,7 @@ class ErrorMessageHandler {
         const container = document.querySelector(".error-message-container");
         if (container) {
             container.style.display = "block";
+            console.log("Error message displayed");
 
             setTimeout(() => (container.style.display = "none"), 5000);
         }

@@ -129,7 +129,7 @@ input[type=number]::-webkit-outer-spin-button {
 
     background-color: #5ba1d0;
     border-radius: 4px;
-    
+    font-size: large;
 }
 
 .arrow-wrapper button {
@@ -142,6 +142,10 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 5px;
     border: none;
     transition: all 0.3s ease;
+}
+
+.arrow-wrapper button:hover {
+    background-color: #757575c2;
 }
 
 .add-to-cart {
@@ -221,6 +225,20 @@ section h2 {
 @media (max-width: 600px) {
     #cartTable {
         font-size: 14px;
+    }
+
+    .arrow-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .arrow-wrapper button {
+        height: auto;
+        font-size: large;
+    }
+
+    .quantity-warning {
+        width: calc(100vw - 1rem - 15px);
     }
 }
 

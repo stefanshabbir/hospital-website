@@ -1,5 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./Fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+    src: url('./Fonts/Montserrat-Italic-VariableFont_wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+font-family: 'DM Sans';
+src: url('./Fonts/DMSans-VariableFont_opsz\,wght.ttf') format('ttf');
+src: url('./Fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('ttf');
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+}
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -362,7 +377,7 @@ footer .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: cadetblue;
+    background-color: #3C70B4;
     font-size: .8rem;
 }
 
