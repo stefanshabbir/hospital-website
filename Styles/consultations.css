@@ -214,6 +214,14 @@ cursor: pointer;
     justify-content: end;
 }
 
+#appdate-label {
+    transform: none;
+}
+
+#appdate {
+    transform: translateY(-5px);
+}
+
 
 .button-container {
 margin: 1rem 0;

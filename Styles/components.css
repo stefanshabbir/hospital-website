@@ -8,12 +8,12 @@
 }
 
 @font-face {
-font-family: 'DM Sans';
-src: url('./Fonts/DMSans-VariableFont_opsz\,wght.ttf') format('ttf');
-src: url('./Fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('ttf');
-font-weight: normal;
-font-style: normal;
-font-display: swap;
+    font-family: 'DM Sans';
+    src: url('./Fonts/DMSans-VariableFont_opsz\,wght.ttf') format('ttf');
+    src: url('./Fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -26,7 +26,7 @@ p {
 }
 
 :root {
-    --primary-color: #00A2E1;
+    --primary-color: #3C70B4;
     --button-color: #005F8D;
 }
 
@@ -279,7 +279,7 @@ p {
     color: #fff;
     margin-top: 15vh;
     margin-left: clamp(2rem, 4vw, 4rem);
-    font-size: clamp(4rem , 3vw, 5vw);
+    font-size: clamp(3rem , 3vw, 5vw);
 }
 
 @media (max-width: 768px) {
@@ -397,5 +397,8 @@ footer .logo {
 
     .social-icons {
         margin-top: 1rem;
+    }
+    .email-id {
+        margin: 1.25rem auto;
     }
 }
