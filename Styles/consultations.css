@@ -180,7 +180,7 @@ input[type="date"]:valid::-webkit-datetime-edit {
 
 .sex {
     font-weight: bold;
-    color: #2f4f4f;
+    color: #333;
     font-size: 1rem;
 }
 
