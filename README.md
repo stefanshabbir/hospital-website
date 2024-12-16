@@ -1,0 +1,1 @@
+This project revolves around a Web Development Project. The aim was to create a hospital website with pure HTML and CSS with no help of libraries or frameworks. The latter part of the project also included the use of Javascript to add functionality to the website.

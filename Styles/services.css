@@ -66,7 +66,7 @@ body {
 }
 
 .card-text p {
-    color: gray;
+    color: rgb(71, 71, 71);
     font-size: 1rem;
 }
 
@@ -78,7 +78,7 @@ body {
 .registration {
     position: relative;
     width: 100%;
-    background-color: #00A2E1;
+    background-color: #3C70B4;
     border-radius: 1rem;
     text-align: center;
     padding: 1.5rem;

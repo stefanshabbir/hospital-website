@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#applyFavouritesBtn {
+    height: 50px;
+    background-color: #3C70B4;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    border: none;
+    padding: 10px 22px;
+    transition: all 0.3s ease;
+
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#applyFavouritesBtn:hover {
+    background-color: #333;
+}
+
+.drug-class {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.drug-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: .5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    transition: .5s ease;
+}
+
+.drug-name h3 {
+    color: #333;
+    font-weight: 650;
+    text-align: center;
+    padding: 10px 0 0;
+}
+
+.drug-card .drug-price-wrap {
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0 8px;
+}
+
+.card-image {
+    height: 150px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    object-fit: contain;
+}
+
+.input-field {
+    width: 50px;
+    height: 35px;
+    border: 1px solid #c9c9c9; 
+    border-radius: 9px;       
+    padding: 5px;              
+    text-align: center;        
+    font-size: 16px;           
+    outline: none;             
+    box-sizing: border-box;
+}
+
+.qty-purchase-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: .3rem 1rem 0;
+}
+
+.qty-purchase-wrapper label {
+    padding-right: .4rem;
+    line-height: 1.2em;
+    text-align: center;
+    color: rgb(65, 65, 65);
+}
+
+.input-field:focus {
+    border-color: #5ba1d0;
+}
+
+.input-field:user-invalid {
+    border-color: indianred;
+    border-width: 2px;
+}
+
+.input-field:user-valid {
+    border-color: #5ba1d0;
+}
+
+input[type=number] { 
+    appearance: textfield;
+    -moz-appearance: textfield;
+    margin: 0; 
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+.arrow-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-right: 1rem;
+
+    background-color: #3C70B4;
+    border-radius: 4px;
+    font-size: large;
+}
+
+.arrow-wrapper button {
+    height: calc(35px/2);
+    padding: 1px 6px;
+
+    background-color: #3C70B4;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.arrow-wrapper button:hover {
+    background-color: #757575c2;
+}
+
+.add-to-cart {
+    height: 35px;
+    background-color: #3C70B4;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #757575c2;
+}
+
+section h2 {
+    text-align: center;
+}
+
+.cart-display {
+    display: none;
+}
+
+#cartTable, #checkoutTable {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Table header styling */
+#cartTable thead, #checkoutTable thead {
+    background-color: #495C8E;
+    color: white;
+    text-align: left;
+}
+
+#cartTable th, #cartTable td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Alternating row colors for tbody */
+#cartTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+#cartTable tbody tr:nth-child(even) {
+    background-color: #6D94C7; 
+}
+
+/* Highlight row on hover */
+#cartTable tbody tr:hover {
+    background-color: #d1ffd1;
+}
+
+#cartTable th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#cartTable td {
+    font-size: 14px;
+    color: #333;
+}
+
+#cartTable .checkout-button {
+    cursor: pointer;
+    height: auto;
+    background-color: #3C70B4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+#cartTable .remove-button {
+    cursor: pointer;
+    height: 35px;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+    .drug-class {
+        padding: 0;
+    }
+
+    #cartTable {
+        font-size: 12px;
+    }
+
+    #cartTable th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .arrow-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .checkout-button { 
+        padding: 8px 12px;
+    }
+
+    .add-to-cart {
+        padding: 4px 10px;
+        text-wrap: pretty;
+    }
+
+    .arrow-wrapper button {
+        height: 35px;
+        width: 30px;
+        font-size: large;
+    }
+
+    .quantity-warning {
+        width: calc(100vw - 1rem - 15px);
+    }
+
+    table {
+        overflow: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    #cartTable {
+        font-size: 12px;
+    }
+
+    #cartTable th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .popup {
+        width: 90vw;
+        left: 50%;
+        transform: translateX(-50%);
+        text-wrap: pretty;
+    }
+}
+
+.quantity-warning {
+    position: absolute;
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 10px;
+    z-index: 10;
+    display: none;
+}
+
+.favourites-warning {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: translateY(-30px);
+    padding: 30px;
+    background-color: #f44336; /* Red */
+    color: white;
+    font-size: 25px;
+    text-align: center;
+
+    z-index: 1000;
+    display: none;
+}
+
+.favourites-warning .closebtn {
+    font-size: 35px;
+}
+  
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
+.popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3C70B4;
+    color: #f8f8f8;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    cursor: pointer;
+    display: none; /* hidden */
+}
+
+.popup.visible {
+    display: block;
+}
+
+.popup:hover {
+    background-color: #597ead;;
+}

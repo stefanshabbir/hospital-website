@@ -37,7 +37,7 @@
 
 .department-section .dept-text-wrap {
     font-size: clamp(1.5em, 2vw + 1em, 2.5em);
-    color: #333;
+    color: #fff;
     position: relative;
 
     display: flex;

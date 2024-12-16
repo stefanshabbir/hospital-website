@@ -1,0 +1,146 @@
+.payment-row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 5px 0;
+    flex-direction: row-reverse;
+  }
+  
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 10px;
+    /* margin: 0; */
+  }
+
+  .province,
+  .zip,
+  .exp-year,
+  .cvv,
+  .exp-month {
+    padding: 0;
+  }
+
+  .province,
+  .exp-year {
+    padding-left: 10px;
+  }
+
+  .exp-month,
+  .zip{
+    padding-right: 10px;
+  }
+
+  .container {
+    background-color: #f2f2f2;
+    padding: 5px 0;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+
+  .cart {
+    padding: 10px 10px;
+  }
+  
+  input[type=text], input[type=email] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin: 10px;
+    display: block;
+  }
+  
+  .btn {
+    background-color: #3C70B4;
+    color: white;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #457ea3;
+  }
+
+  .checkout {
+    font-size: 1.2rem;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .payment-row {
+      flex-direction: column;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+    .cvv,
+    .zip,
+    .province,
+    .exp-year {
+      padding-left: 0;
+    }
+  }
+
+#cardPaymentSection, #cashPaymentSection {
+  display: none;
+}
+
+.input-field {
+  width: 100%;
+  height: 41px;
+  /* margin-top: 8px; */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+}
+
+select.input-field:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+input.error {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+input:focus.error {
+  outline: none;
+  box-shadow: 0 0 5px red;
+}

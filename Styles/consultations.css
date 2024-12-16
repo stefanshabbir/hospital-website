@@ -170,7 +170,7 @@ input[type="date"]:valid::-webkit-datetime-edit {
 }
 
 .sex-option {
-    color: gray;
+    color: #333;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -180,7 +180,7 @@ input[type="date"]:valid::-webkit-datetime-edit {
 
 .sex {
     font-weight: bold;
-    color: #2f4f4f;
+    color: #333;
     font-size: 1rem;
 }
 
@@ -212,6 +212,14 @@ cursor: pointer;
 
 #postal {
     justify-content: end;
+}
+
+#appdate-label {
+    transform: none;
+}
+
+#appdate {
+    transform: translateY(-5px);
 }
 
 

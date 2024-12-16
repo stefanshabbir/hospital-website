@@ -8,6 +8,8 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/png">
     <title>Patient Form</title>
+    <script src="Scripts/login.js"></script>
+    <script src="Scripts/auth.js"></script>
 </head>
 <body>
     <header class="header">
@@ -21,7 +23,7 @@
         </a>
 
         <input type="checkbox" id="check">
-        <label for="check" class="icons">
+        <label for="check" class="icons" aria-label="Hamburger Menu">
             <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M4 6h16v2H4z"></path>
                 <path d="M4 12h16v2H4z"></path>
@@ -55,12 +57,12 @@
             <input type="radio" id="register" name="tab-container" checked="checked">
             <label for="register" class="tab-button">Register</label>
             <div class="tab">
-                <form>
+                <form class="registerForm">
                     <h2>Registration</h2>
-                    <h4 class="legend"><i>Personal Information</i></h4>
+                    <h3 class="legend"><i>Personal Information</i></h3>
                     <div class="content">
                         <div class="input">
-                            <input type="text" name="name" placeholder="Enter Fullname" required>
+                            <input type="text" name="name" id="name" placeholder="Enter Fullname" required>
                             <label for="name">Full Name</label>
                         </div>
                         <div class="input">
@@ -77,38 +79,38 @@
                             <label for="other">Other</label>
                         </div>
                         <div class="input">
-                            <input type="email" name="email" placeholder="Enter E-Mail" required>
+                            <input type="email" id="email" name="email" placeholder="Enter E-Mail" required>
                             <label for="email">Email</label>
                         </div>
                         <div class="input">
-                            <input type="tel" name="phoneNumber" placeholder="Enter Phone Number" required>
-                            <label for="phonenumber">Phone Number</label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Enter Phone Number" required>
+                            <label for="phoneNumber">Phone Number</label>
                         </div>
                     </div>
-                    <h4 class="legend"><i>Address</i></h4>
+                    <h3 class="legend"><i>Address</i></h3>
                     <div class="content">
                         <div class="input address">
-                            <input type="text" name="address" placeholder="Enter Address" required>
+                            <input type="text" name="address" id="address" placeholder="Enter Address" required>
                             <label for="address">Address</label>
                         </div>
                         <div class="input" id="province">
-                            <input type="text" name="province" placeholder="Enter Province" required>
-                            <label for="province">Province</label>
+                            <input type="text" name="province" id="provincefield" placeholder="Enter Province" required>
+                            <label for="provincefield">Province</label>
                         </div>
                         <div class="input" id="postal">
-                            <input type="text" name="postal-code" placeholder="Enter Postal Code" required>
+                            <input type="text" name="postal-code" id="postal-code" placeholder="Enter Postal Code" required>
                             <label for="postal-code">Postal Code</label>
                         </div>
                     </div>
-                    <h4 class="legend"><i>Account</i></h4>
+                    <h3 class="legend"><i>Account</i></h3>
                     <div class="content">
                         <div class="input">
-                            <input type="text" name="uname" placeholder="Enter Username" required>
-                            <label for="username">Username</label>
+                            <input type="text" name="uname" id="RegUsername" placeholder="Enter Username" required>
+                            <label for="RegUsername">Username</label>
                         </div>
                         <div class="input">
-                            <input type="password" name="password" placeholder="Enter Password" required>
-                            <label for="password">Password</label>
+                            <input type="password" id="RegPassword" name="password" placeholder="Enter Password" required>
+                            <label for="RegPassword">Password</label>
                         </div>
                     </div>
                     <div class="button-container">
@@ -120,15 +122,15 @@
             <input type="radio" id="login" name="tab-container">
             <label for="login" class="tab-button">Log In</label>
             <div class="tab">
-                <form>
+                <form class="loginForm">
                     <h2>Log In</h2>
                     <div class="content">
                         <div class="input">
-                            <input type="text" name="uname" placeholder="Enter Username" required>
+                            <input type="text" name="uname" id="username" placeholder="Enter Username" required>
                             <label for="username">Username</label>
                         </div>
                         <div class="input">
-                            <input type="password" name="password" placeholder="Enter Password" required>
+                            <input type="password" name="password" id="password" placeholder="Enter Password" required>
                             <label for="password">Password</label>
                         </div>
                     </div>
@@ -145,6 +147,5 @@
             </div>
           </div>
     </main>
-
 </body>
 </html>
