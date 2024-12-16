@@ -345,7 +345,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    if (location.href == "/pharmacy.html") {
-        observer.observe(cartTable);
-    }
+    observer.observe(cartTable);
 })
