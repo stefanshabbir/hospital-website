@@ -44,7 +44,7 @@ class DrugCard {
 
         if (quantity > 0 && quantity < 100 && decimalCheck === 0) {
             const drugName = this.element.querySelector(".drug-name h3").textContent;
-            const drugPrice = parseFloat(this.element.querySelector("#drugPrice").textContent);
+            const drugPrice = parseFloat(this.element.querySelector(".drugPrice").textContent);
             Cart.addItems({name: drugName, quantity, price: drugPrice});
             console.log(`${quantity} item(s) of ${drugName} added to cart for ${drugPrice}`);
         } else {
