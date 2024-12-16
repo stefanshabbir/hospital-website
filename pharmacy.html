@@ -54,24 +54,30 @@
             <p>At McStuffins Hospital, we are committed to providing top-tier healthcare services tailored to meet the needs of our diverse patient population. Our state-of-the-art facilities and dedicated medical professionals ensure that you receive the highest standard of care, whether you’re visiting for a routine check-up or a complex procedure. Explore our wide range of services designed to promote health, wellness, and recovery.</p>
             <br>
            <h2> Have Something In Mind? </h2>
-           <button id="applyFavouritesBtn">Apply Favorites</button>
+           <div>
+                <div class="favourites-warning error-message-container">
+                    <span class="closebtn">&times;</span>
+                    Error: You do not have any favourites to apply. 
+                </div>
+               <button id="applyFavouritesBtn">Apply Favorites</button>
+           </div>
         </section>
 
         <section id="analgesics">
             <h2>Analgesics</h2>
             <div class="drug-class">
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Panadol.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Paracetamol</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">5.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning error-message-container">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" id="quantityInput" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -81,17 +87,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Aspirin.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Aspirin</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">6.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -101,17 +107,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Ibuprofen.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Ibuprofen</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">7.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -121,17 +127,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/naproxen.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Naproxen</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">12.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" id="quantityInput" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -141,17 +147,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Codeine.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Codeine</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">15.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -161,17 +167,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Diclofenac.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Diclofenac </h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">10.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -187,17 +193,17 @@
             <h2>Antibiotics</h2>
             <div class="drug-class">
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Amoxicillin.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Amoxicillin</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">8.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -207,17 +213,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/ciprofloxacin.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Ciprofloxacin</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">15.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -227,17 +233,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Azithromycin.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Azithromycin</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">30.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -247,17 +253,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Clindamycin.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Clindamycin</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">20.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -267,17 +273,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Cephalexin.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Cephalexin</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">12.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -287,17 +293,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/doxycycline.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Doxycycline</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">18.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -313,17 +319,17 @@
             <h2>Antidepressants</h2>
             <div class="drug-class">
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/PROZAC.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Fluoxetine (Prozac)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">25.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -333,17 +339,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/zoloft.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Sertraline (Zoloft)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">30.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -353,17 +359,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Celexa.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Citalopram (Celexa)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">35.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -373,17 +379,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/amitriptyline.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Amitriptyline</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">20.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -393,17 +399,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/lexapro.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Escitalopram (Lexapro)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">40.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -413,17 +419,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/effexor.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Venlafaxine (Effexor)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">50.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -439,17 +445,17 @@
             <h2>Antihistamines</h2>
             <div class="drug-class">
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Benadryl.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Diphenhydramine (Benadryl)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">10.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -459,17 +465,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Claritin.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Loratadine (Claritin)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">25.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -479,17 +485,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Zyrtec.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Cetirizine (Zyrtec)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">20.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -499,17 +505,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Allegra.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Fexofenadine (Allegra)</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">35.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -525,17 +531,17 @@
             <h2>Antihypertensives</h2>
             <div class="drug-class">
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Lisinopril.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Lisinopril</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">15.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -545,17 +551,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Amlodipine.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Amlodipine</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">12.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -565,17 +571,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/LOSARTAN.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Losartan</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">20.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -585,17 +591,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Metoprolol.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Metoprolol</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">18.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -605,17 +611,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Hydrochlorothiazide.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Hydrochlorothiazide</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">10.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  
@@ -625,17 +631,17 @@
                     </div>
                 </div>
                 <div class="drug-card">
-                    <img src="Images/21937.webp" class="card-image" alt="Ordinary busy day of surgeon">
+                    <img loading="lazy" src="Images/Medicines/Ramipril.webp" class="card-image" alt="Ordinary busy day of surgeon">
                     <div class="drug-name">
                         <h3>Ramipril</h3>
                     </div>
                     <span class="drug-price-wrap">LKR <span id="drugPrice">25.00</span></span>
                     <div class="qty-purchase-wrapper">
-                        <label for="quantityInput">Quantity</label>
                         <div class="quantity-warning">
                             <span class="closebtn">&times;</span>
                             Error: Please enter a valid value. 
                         </div>
+                        <label for="quantityInput">Quantity</label>
                         <input type="number" class="input-field quantityInput" min="0" max="100" value="0" pattern="^[1-9]\d*$">
                         <div class="arrow-wrapper">
                             <button class="increase-btn">+</button>  

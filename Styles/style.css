@@ -48,7 +48,7 @@ body {
 }
 
 .hero-content {
-    animation: fade ease 5s;
+    animation: fade ease 3s;
 }
 
 .hero h1 {

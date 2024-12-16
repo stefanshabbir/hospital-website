@@ -7,12 +7,77 @@
 </head>
 <body>
     <main>
-        <h2>Calculate Volume of Cylinder! </h2>
+        <!-- <h2>Calculate Volume of Cylinder! </h2>
         <p>Enter a number: </p>
         <input type="number" id="numInput1" placeholder="Radius">
         <input type="number" id="numInput2" placeholder="Height">
         <button id="submitBtn">Enter</button>
-        <p id="result"></p>
+        <p id="result"></p> -->
+
+        <label for="paymentMethod">Select Payment Method</label>
+  <select id="paymentMethod">
+    <option value="card">Pay By Card</option>
+    <option value="cash">Cash On Delivery</option>
+  </select>
+
+  <!-- Hidden input for toggling tabs -->
+  <div class="payment-options">
+    <input type="radio" id="cardPayment" name="paymentOption" class="hidden-input" checked>
+    <input type="radio" id="cashPayment" name="paymentOption" class="hidden-input">
+
+    <!-- Pay By Card Section -->
+    <div class="tab" data-value="card">
+      <label for="cardPayment" class="tab-label">Pay By Card</label>
+      <label for="cname">Name on Card</label>
+      <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+      <label for="ccnum">Credit card number</label>
+      <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+      <label for="expmonth">Exp Month</label>
+      <input type="text" id="expmonth" name="expmonth" placeholder="September">
+      <div class="payment-row">
+        <div class="col-50 exp-year">
+          <label for="expyear">Exp Year</label>
+          <input type="text" id="expyear" name="expyear" placeholder="2025">
+        </div>
+        <div class="col-50 cvv">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" placeholder="123">
+        </div>
+      </div>
+    </div>
+
+    <!-- Cash On Delivery Section -->
+    <div class="tab" data-value="cash">
+      <label for="cashPayment" class="tab-label">Cash On Delivery</label>
+      <p>Cash on Delivery selected. Please confirm your shipping address.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Hide the radio buttons */
+  .hidden-input {
+    display: none;
+  }
+
+  /* Style the tabs */
+  .tab {
+    display: none;
+  }
+
+  /* Show tab based on the selected radio button */
+  #cardPayment:checked ~ .tab[data-value="card"],
+  #cashPayment:checked ~ .tab[data-value="cash"] {
+    display: block;
+  }
+
+  /* Optional: Improve the dropdown look */
+  select {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+</style>
     </main>
     <script defer>
         let numInput = document.getElementById("numInput");

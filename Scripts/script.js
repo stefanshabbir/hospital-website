@@ -7,7 +7,7 @@ class DrugCard {
         this.addToCartButton = element.querySelector(".add-to-cart");
 
         this.min = parseInt(this.input.getAttribute("min")) || 0;
-        this.max = parseInt(this.input.getAttribute("max")) || 100;
+        this.max = parseInt(this.input.getAttribute("max")) || 101;
 
         this.initialize();
     }
@@ -20,11 +20,12 @@ class DrugCard {
 
     updateQuantity(action) {
         let currentValue = parseInt(this.input.value);
+        const quantityWarning = this.element.querySelector(".quantity-warning");
     
         if (currentValue > this.max) {
             const quantityWarning = document.querySelector(".quantity-warning");
             if (quantityWarning) {
-                ErrorMessageHandler.showError();
+                ErrorMessageHandler.showError(quantityWarning);
             }
         }
 
@@ -47,7 +48,7 @@ class DrugCard {
             Cart.addItems({name: drugName, quantity, price: drugPrice});
             console.log(`${quantity} item(s) of ${drugName} added to cart for ${drugPrice}`);
         } else {
-            ErrorMessageHandler.showError();
+            ErrorMessageHandler.showError(quantityWarning);
             this.input.value = 0;
         }
     }
@@ -112,7 +113,7 @@ class Cart {
         this.items.forEach(item => {
             const itemElement = document.createElement("p");
     
-            const productName = document.createElement("a");
+            const productName = document.createElement("span");
             productName.textContent = `${item.name} (x${item.quantity})`;
     
             const priceSpan = document.createElement("span");
@@ -250,8 +251,8 @@ class Cart {
         const savedItems = sessionStorage.getItem("cartItems");
         if (savedItems) {
             localStorage.setItem("cartItems", (savedItems));
+            alert("Success! You've saved your cart");
         }
-        alert("Success!");
     }
 
     static applyFavorites() {
@@ -263,6 +264,9 @@ class Cart {
             document.getElementById("cartTable").scrollIntoView({ behavior: "smooth", block: "start" });
     
             Cart.refreshCartUI();
+        } else {
+            const favoritesWarning = document.querySelector(".favourites-warning")
+            ErrorMessageHandler.showError(favoritesWarning);
         }
     }
 }
@@ -285,8 +289,8 @@ class ErrorMessageHandler {
         }
     }
 
-    static showError() {
-        const container = document.querySelector(".error-message-container");
+    static showError(container) {
+        // const container = document.querySelector(".error-message-container");
         if (container) {
             container.style.display = "block";
             console.log("Error message displayed");
@@ -341,5 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    observer.observe(cartTable);
+    if (location.href == "/pharmacy.html") {
+        observer.observe(cartTable);
+    }
 })
